@@ -59,8 +59,6 @@ public class AutomatizacionVueling {
             String mes = partesFecha1[1];
             String dia = partesFecha1[2];
 
-            // WebElement fecha1 = driver.findElement(By.xpath("//input[@id='marketDate1']"));
-            // fecha1.sendKeys(fechaIda);
 
             LocalDate fechaSumada2 = fechaActual.plusDays(7);
             LocalDate fechaFinal2=fechaSumada2.minusMonths(1);
@@ -73,21 +71,15 @@ public class AutomatizacionVueling {
 
             System.out.println("año"+anio+"mes"+mes+"dia"+dia);
             System.out.println("año"+anio2+"mes"+mes2+"dia"+dia2);
-            //WebElement fecha2 = driver.findElement(By.xpath("//input[@id='marketDate2']"));
-            //fecha2.sendKeys(fechaVuelta);
 
-            WebElement anioMesIda = driver.findElement(By.xpath("//td[@data-handler='selectDay' and @data-month='"+mes+"' and @data-year='"+anio+"']"));
-            WebElement diaIda = driver.findElement(By.xpath("//a[@class='ui-state-default']"));
-            diaIda.sendKeys(dia);
+
+            WebElement anioMesIda = driver.findElement(By.xpath("//td[@data-handler='selectDay' and @data-month='"+mes+"' and @data-year='"+anio+"']//a[text()='"+dia+"']"));
             anioMesIda.click();
 
-            WebElement anioMesVuelta = driver.findElement(By.xpath("//td[@data-handler='selectDay' and @data-month='"+mes2+"' and @data-year='"+anio2+"']"));
-            WebElement diaVuelta = driver.findElement(By.xpath("//a[@class='ui-state-default']"));
-            diaVuelta.sendKeys(dia2);
+
+            WebElement anioMesVuelta = driver.findElement(By.xpath("//td[@data-handler='selectDay' and @data-month='"+mes2+"' and @data-year='"+anio2+"']//a[text()='"+dia2+"']"));
             anioMesVuelta.click();
 
-            // WebElement cerrar_calendario =driver.findElement(By.xpath("//a[@id='datePickerTitleCloseButton']"));
-            //cerrar_calendario.click();
 
             // 2 adultos, 1 niño.
             WebElement adulto = driver.findElement(By.xpath("//a[@id='DropDownListPassengerType_ADT_2']"));
@@ -101,5 +93,8 @@ public class AutomatizacionVueling {
             //4.El usuario hace clic en "Buscar vuelos".
             WebElement btn_buscar = driver.findElement(By.xpath("//a[@id='AvailabilitySearchInputSearchView_btnClickToSearchNormal']"));
             btn_buscar.click();
+
+
+
 
 }}
