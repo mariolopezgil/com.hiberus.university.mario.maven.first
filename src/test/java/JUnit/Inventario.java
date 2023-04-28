@@ -1,3 +1,5 @@
+package JUnit;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
@@ -123,7 +125,7 @@ public class Inventario {
     @Test
     public void OrdenAlfabeticoInventario() {
 
-        List<WebElement> elementos = driver.findElements(By.xpath("//div[@class='inventory_item']"));
+        List<WebElement> elementos = driver.findElements(By.xpath("//div[@class='inventory_item']//div[@class='inventory_item_name']"));
         List<String> nombres = new ArrayList<>();
 
 // Obtener los nombres de los elementos y almacenarlos en la lista "nombres"
@@ -142,22 +144,75 @@ public class Inventario {
         nombresEsperados.add("Sauce Labs Onesie");
         nombresEsperados.add("Test.allTheThings() T-Shirt (Red)");
 
-        assert nombres.size() == nombresEsperados.size(); // Verificar que ambas listas tengan la misma cantidad de elementos
+        Assert.assertEquals("El resultado de las listas ordenadas alfabeticamente no son iguales",nombresEsperados,nombres);
 
-        for (int i = 0; i < nombres.size(); i++) {
-            nombres.get(i).equals(nombresEsperados.get(i)); // Comparar los elementos uno por uno
-        }
+
 
     }
 
     @Test
     public void OrdenPrecioInventarioMayorAMenor() {
+        driver.findElement(By.xpath("//select[@data-test='product_sort_container']//option[@value='hilo']")).click();
+        List<WebElement> elementos = driver.findElements(By.xpath("//div[@class='inventory_item']//div[@class='inventory_item_price']"));
+        List<Double> precio = new ArrayList<>();
+
+// Obtener los nombres de los elementos y almacenarlos en la lista "nombres"
+        for (WebElement elemento : elementos) {
+            String nombre= elemento.getText();
+            String precioElementos= nombre.replace("$","");
+            Double precioDouble= Double.parseDouble(precioElementos);
+            precio.add(precioDouble);
+
+        }
+
+        Collections.sort(precio,Collections.reverseOrder());
+        System.out.println(precio);
+
+        List<Double> precioEsperado = new ArrayList<>();
+
+        precioEsperado.add(49.99);
+        precioEsperado.add(29.99);
+        precioEsperado.add(15.99);
+        precioEsperado.add(15.99);
+        precioEsperado.add(9.99);
+        precioEsperado.add(7.99);
+
+
+
+
+        Assert.assertEquals("El resultado de las listas ordenadas alfabeticamente no son iguales",precioEsperado,precio);
+
 
 
     }
 
     @Test
     public void OrdenPrecioMenorAMayor() {
+        driver.findElement(By.xpath("//select[@data-test='product_sort_container']//option[@value='lohi']")).click();
+        List<WebElement> elementos = driver.findElements(By.xpath("//div[@class='inventory_item']//div[@class='inventory_item_price']"));
+        List<Double> precio = new ArrayList<>();
+
+// Obtener los nombres de los elementos y almacenarlos en la lista "nombres"
+        for (WebElement elemento : elementos) {
+            String nombre= elemento.getText();
+            String precioElementos= nombre.replace("$","");
+            Double precioDouble= Double.parseDouble(precioElementos);
+            precio.add(precioDouble);
+
+        }
+
+        Collections.sort(precio);
+        System.out.println(precio);
+
+        List<Double> precioEsperado = new ArrayList<>();
+        precioEsperado.add(7.99);
+        precioEsperado.add(9.99);
+        precioEsperado.add(15.99);
+        precioEsperado.add(15.99);
+        precioEsperado.add(29.99);
+        precioEsperado.add(49.99);
+
+        Assert.assertEquals("El resultado de las listas ordenadas alfabeticamente no son iguales",precioEsperado,precio);
     }
 
     @After
