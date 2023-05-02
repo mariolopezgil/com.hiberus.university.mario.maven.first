@@ -14,13 +14,13 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import java.util.List;
 
 public class Carrito {
-    String url="https://www.saucedemo.com/";
+    String url = "https://www.saucedemo.com/";
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.firefoxdriver().setup();
-        FirefoxOptions options= new FirefoxOptions();
+        FirefoxOptions options = new FirefoxOptions();
         driver = new FirefoxDriver(options);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
@@ -38,14 +38,15 @@ public class Carrito {
         buttonLogin.click();
 
     }
+
     @Test
-    public void eliminarProductoCarrito(){
+    public void eliminarProductoCarrito() {
         WebElement containerDiv = driver.findElement(By.xpath("//div[@class='inventory_list']"));
         int tamanio = containerDiv.findElements(By.xpath("//div[@class='inventory_item']")).size();
-        int num1 = (int)(Math.random() * (tamanio - 1 + 1)) + 1;
-        int num2 = (int)(Math.random() * (tamanio - 1 + 1)) + 1;
+        int num1 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
+        int num2 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
         while (num2 == num1) {
-            num2 = (int)(Math.random() * (tamanio- 1 + 1)) + 1;
+            num2 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
         }
         WebElement elemento1 = containerDiv.findElement(By.xpath("//div[@class='inventory_item'][" + num1 + "]//button[@class='btn btn_primary btn_small btn_inventory']"));
         elemento1.click();
@@ -55,16 +56,17 @@ public class Carrito {
         WebElement carrito = driver.findElement(By.xpath("//a[@class='shopping_cart_link']"));
         carrito.click();
 
-        int num3 = (int)(Math.random() * (2 - 1 + 1)) + 1;
+        int num3 = (int) (Math.random() * (2 - 1 + 1)) + 1;
         WebElement eliminar = driver.findElement(By.xpath("//div[@class='cart_list'][" + num3 + "]//button[@class='btn btn_secondary btn_small cart_button']"));
         eliminar.click();
 
         WebElement numeroCarrito = driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
-        Assert.assertEquals( numeroCarrito.getText(), "1");
+        Assert.assertEquals("El producto se ha elinimado correctamente",numeroCarrito.getText(), "1");
 
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
 }

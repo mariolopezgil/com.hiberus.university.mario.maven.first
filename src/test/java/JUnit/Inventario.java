@@ -99,14 +99,14 @@ public class Inventario {
     public void Aniadir3Productos() {
         WebElement containerDiv = driver.findElement(By.xpath("//div[@class='inventory_list']"));
         int tamanio = containerDiv.findElements(By.xpath("//div[@class='inventory_item']")).size();
-        int num1 = (int)(Math.random() * (tamanio - 1 + 1)) + 1;
-        int num2 = (int)(Math.random() * (tamanio - 1 + 1)) + 1;
+        int num1 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
+        int num2 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
         while (num2 == num1) {
-            num2 = (int)(Math.random() * (tamanio- 1 + 1)) + 1;
+            num2 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
         }
-        int num3 = (int)(Math.random() * (tamanio - 1 + 1)) + 1;
-        while (num3 == num1 || num1==num2) {
-            num3 = (int)(Math.random() * (tamanio- 1 + 1)) + 1;
+        int num3 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
+        while (num3 == num1 || num3 == num2) {
+            num3 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
         }
 
         WebElement elemento1 = containerDiv.findElement(By.xpath("//div[@class='inventory_item'][" + num1 + "]//button[@class='btn btn_primary btn_small btn_inventory']"));
@@ -119,7 +119,7 @@ public class Inventario {
         WebElement numeroCarrito = driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
 
         String numero = numeroCarrito.getText();
-        Assert.assertEquals("3", numero);
+        Assert.assertEquals("El numero no coincide","3", numero);
     }
 
     @Test
@@ -144,8 +144,7 @@ public class Inventario {
         nombresEsperados.add("Sauce Labs Onesie");
         nombresEsperados.add("Test.allTheThings() T-Shirt (Red)");
 
-        Assert.assertEquals("El resultado de las listas ordenadas alfabeticamente no son iguales",nombresEsperados,nombres);
-
+        Assert.assertEquals("El resultado de las listas ordenadas alfabeticamente no son iguales", nombresEsperados, nombres);
 
 
     }
@@ -158,14 +157,14 @@ public class Inventario {
 
 // Obtener los nombres de los elementos y almacenarlos en la lista "nombres"
         for (WebElement elemento : elementos) {
-            String nombre= elemento.getText();
-            String precioElementos= nombre.replace("$","");
-            Double precioDouble= Double.parseDouble(precioElementos);
+            String nombre = elemento.getText();
+            String precioElementos = nombre.replace("$", "");
+            Double precioDouble = Double.parseDouble(precioElementos);
             precio.add(precioDouble);
 
         }
 
-        Collections.sort(precio,Collections.reverseOrder());
+        Collections.sort(precio, Collections.reverseOrder());
         System.out.println(precio);
 
         List<Double> precioEsperado = new ArrayList<>();
@@ -178,10 +177,7 @@ public class Inventario {
         precioEsperado.add(7.99);
 
 
-
-
-        Assert.assertEquals("El resultado de las listas ordenadas alfabeticamente no son iguales",precioEsperado,precio);
-
+        Assert.assertEquals("El resultado de las listas ordenadas por precio de mayor a menor no son iguales", precioEsperado, precio);
 
 
     }
@@ -194,9 +190,9 @@ public class Inventario {
 
 // Obtener los nombres de los elementos y almacenarlos en la lista "nombres"
         for (WebElement elemento : elementos) {
-            String nombre= elemento.getText();
-            String precioElementos= nombre.replace("$","");
-            Double precioDouble= Double.parseDouble(precioElementos);
+            String nombre = elemento.getText();
+            String precioElementos = nombre.replace("$", "");
+            Double precioDouble = Double.parseDouble(precioElementos);
             precio.add(precioDouble);
 
         }
@@ -212,7 +208,7 @@ public class Inventario {
         precioEsperado.add(29.99);
         precioEsperado.add(49.99);
 
-        Assert.assertEquals("El resultado de las listas ordenadas alfabeticamente no son iguales",precioEsperado,precio);
+        Assert.assertEquals("El resultado de las listas ordenadas de menor a mayor no son iguales", precioEsperado, precio);
     }
 
     @After

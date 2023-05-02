@@ -13,20 +13,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class Login {
-    String url="https://www.saucedemo.com/";
+    String url = "https://www.saucedemo.com/";
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.firefoxdriver().setup();
-        FirefoxOptions options= new FirefoxOptions();
+        FirefoxOptions options = new FirefoxOptions();
         driver = new FirefoxDriver(options);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.get(url);
     }
+
     @Test
-    public void validationCorrecto(){
+    public void validationCorrecto() {
         WebElement username = driver.findElement(By.xpath("//input[@data-test='username']"));
         username.sendKeys("standard_user");
 
@@ -41,13 +42,13 @@ public class Login {
 
         String actualUrl = driver.getCurrentUrl();
 
-        Assert.assertEquals("https://www.saucedemo.com/inventory.html", actualUrl);
-
+        Assert.assertEquals("La pagina no es correcta","https://www.saucedemo.com/inventory.html", actualUrl);
 
 
     }
+
     @Test
-    public void validationIncorrecto(){
+    public void validationIncorrecto() {
         WebElement username = driver.findElement(By.xpath("//input[@data-test='username']"));
         username.sendKeys("standard_use");
 
@@ -61,11 +62,13 @@ public class Login {
 
         WebElement mensajeError = driver.findElement(By.xpath("//div[@class='error-message-container error']"));
 
-        Assert.assertTrue(mensajeError.isDisplayed());
+        Assert.assertTrue("El mensaje de error no se muestra",mensajeError.isDisplayed());
 
 
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
-}}
+    }
+}

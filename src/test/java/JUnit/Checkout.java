@@ -100,7 +100,7 @@ public class Checkout {
         WebElement finalizar = driver.findElement(By.xpath("//button[@data-test='finish']"));
         finalizar.click();
 
-        Assert.assertEquals(precioItems, precioTotalProductos);
+        Assert.assertEquals("El precio no coincide",precioItems, precioTotalProductos);
         System.out.println(precioItems);
         System.out.println(precioTotalProductos);
 
@@ -137,7 +137,7 @@ public class Checkout {
 
         WebElement mensaje = driver.findElement(By.xpath("//div[@class='complete-text']"));
 
-        Assert.assertEquals(mensaje.getText(),"Your order has been dispatched, and will arrive just as fast as the pony can get there!");
+        Assert.assertEquals("El mensaje de texto no es el correcto",mensaje.getText(),"Your order has been dispatched, and will arrive just as fast as the pony can get there!");
 
     }
 

@@ -5,22 +5,25 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.TimeUnit;
 
-public class VuelingJUnit {
+public class CA_1 {
     String url = "http://tickets.vueling.com";
     WebDriver driver;
-
     @Before
-    public void SetUp() {
+    public void setUp(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
 
@@ -28,13 +31,9 @@ public class VuelingJUnit {
         driver.manage().window().maximize();
         driver.get(url);
 
-
-
     }
-
     @Test
-    public void comprarBillete() {
-
+    public void happypath(){
         WebDriverWait wait = new WebDriverWait(driver, 5);
         WebElement cookies = driver.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']"));
         cookies.click();
@@ -86,21 +85,10 @@ public class VuelingJUnit {
         anioMesVuelta.click();
 
 
-        // 2 adultos, 1 niño.
-       // WebElement adulto = driver.findElement(By.xpath("//a[@id='DropDownListPassengerType_ADT_2']"));
-        //adulto.click();
-        WebElement adulto = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='wrapper_elForm_section marginLeft0']//a[@id='DropDownListPassengerType_ADT_2']")));
+        // 1 Adulto.
+
+        WebElement adulto = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='wrapper_elForm_section marginLeft0']//a[@id='DropDownListPassengerType_ADT_1']")));
         adulto.click();
-
-        //WebElement ninios = driver.findElement(By.xpath("//select[@id='AvailabilitySearchInputSearchView_DropDownListPassengerType_CHD']"));
-        //ninios.click();
-        //actions.sendKeys(ninios, Keys.ARROW_DOWN).build().perform();
-        //actions.sendKeys(ninios, Keys.ENTER).build().perform();
-
-        Select selectninios = new Select(driver.findElement(By.xpath("//select[@id='AvailabilitySearchInputSearchView_DropDownListPassengerType_CHD']")));
-        selectninios.selectByValue("1");
-
-
 
         //4.El usuario hace clic en "Buscar vuelos".
         WebElement btn_buscar = driver.findElement(By.xpath("//a[@id='AvailabilitySearchInputSearchView_btnClickToSearchNormal']"));
@@ -109,10 +97,11 @@ public class VuelingJUnit {
         WebElement mensajeDenegado = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h1")));
         Assert.assertEquals("no ha realizado la busqueda","Access Denied",mensajeDenegado.getText());
 
+
     }
 
     @After
-    public void TearDown() {
-        driver.close();
+    public void tearDown(){
+        //driver.close();
     }
 }

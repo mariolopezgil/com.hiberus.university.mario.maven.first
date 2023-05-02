@@ -14,13 +14,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LogOut {
-    String url="https://www.saucedemo.com/";
+    String url = "https://www.saucedemo.com/";
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.firefoxdriver().setup();
-        FirefoxOptions options= new FirefoxOptions();
+        FirefoxOptions options = new FirefoxOptions();
         driver = new FirefoxDriver(options);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
@@ -37,8 +37,9 @@ public class LogOut {
         WebElement buttonLogin = driver.findElement(By.xpath("//input[@data-test='login-button']"));
         buttonLogin.click();
     }
+
     @Test
-    public void comprobarLogOut(){
+    public void comprobarLogOut() {
         WebElement menu = driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']"));
         menu.click();
         WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -47,10 +48,11 @@ public class LogOut {
         logout.click();
         String actualUrl = driver.getCurrentUrl();
 
-        Assert.assertEquals("https://www.saucedemo.com/", actualUrl);
+        Assert.assertEquals("La pagina no es correcta","https://www.saucedemo.com/", actualUrl);
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
 }
