@@ -1,4 +1,4 @@
-package JUnit;
+package test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -48,6 +48,7 @@ public class Checkout {
         while (num3 == num1 || num1==num2) {
             num3 = (int)(Math.random() * (tamanio- 1 + 1)) + 1;
         }
+
         WebElement precioElemento1 = containerDiv.findElement(By.xpath("//div[@class='inventory_item'][" + num1 + "]//div[@class='inventory_item_price']"));
         String p1=precioElemento1.getText();
         String formato= p1.replace("$","");
@@ -64,7 +65,6 @@ public class Checkout {
         Double Precio3=Double.parseDouble(formato3);
 
         Double precioTotalProductos= Precio1+Precio2+Precio3;
-
 
         WebElement elemento1 = containerDiv.findElement(By.xpath("//div[@class='inventory_item'][" + num1 + "]//button[@class='btn btn_primary btn_small btn_inventory']"));
         elemento1.click();
@@ -100,7 +100,7 @@ public class Checkout {
         WebElement finalizar = driver.findElement(By.xpath("//button[@data-test='finish']"));
         finalizar.click();
 
-        Assert.assertEquals("El precio no coincide",precioItems, precioTotalProductos);
+        Assert.assertEquals("El precio no coincide",precioTotalProductos,precioItems );
         System.out.println(precioItems);
         System.out.println(precioTotalProductos);
 

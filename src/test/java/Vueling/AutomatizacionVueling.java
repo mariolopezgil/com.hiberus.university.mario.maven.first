@@ -19,7 +19,7 @@ public class AutomatizacionVueling {
             driver.manage().window().maximize();
 
 /*
-* Realizar JUnit.Login:
+* Realizar test.Login:
 1.Entra en http://tickets.vueling.com2.Selecciona un billete de ida y vuelta de Barcelona a Madrid,
 * 2 adultos, 1 niño.
 * 3.La fecha de salida debe ser 4 días desde la fecha de ejecución de la prueba, la fecha de regreso es 3 días después de la salida

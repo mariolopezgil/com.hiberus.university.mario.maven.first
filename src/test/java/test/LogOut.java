@@ -1,4 +1,4 @@
-package JUnit;
+package test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -42,13 +42,17 @@ public class LogOut {
     public void comprobarLogOut() {
         WebElement menu = driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']"));
         menu.click();
+
         WebDriverWait wait = new WebDriverWait(driver, 5);
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='logout_sidebar_link']")));
+
         WebElement logout = driver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
         logout.click();
+
         String actualUrl = driver.getCurrentUrl();
 
-        Assert.assertEquals("La pagina no es correcta","https://www.saucedemo.com/", actualUrl);
+        Assert.assertEquals("La pagina no es correcta",url, actualUrl);
     }
 
     @After

@@ -1,4 +1,4 @@
-package JUnit;
+package test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -61,7 +61,7 @@ public class Carrito {
         eliminar.click();
 
         WebElement numeroCarrito = driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
-        Assert.assertEquals("El producto se ha elinimado correctamente",numeroCarrito.getText(), "1");
+        Assert.assertEquals("El producto no se ha eliminado correctamente",numeroCarrito.getText(), "1");
 
     }
 

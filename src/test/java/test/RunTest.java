@@ -1,8 +1,8 @@
-package JUnit;
+package test;
 
-import JUnit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import test.*;
 
 
 @RunWith(Suite.class)

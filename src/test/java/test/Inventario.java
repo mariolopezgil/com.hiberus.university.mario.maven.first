@@ -1,4 +1,4 @@
-package JUnit;
+package test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -13,6 +13,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.InvetarioPages;
+import pages.LoginPages;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +23,11 @@ import java.util.List;
 public class Inventario {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
+    LoginPages loginPages;
+
+    InvetarioPages invetarioPages;
+    String user = "standard_user";
+    String password = "secret_sauce";
 
     @Before
     public void setUp() {
@@ -31,52 +38,44 @@ public class Inventario {
         driver.manage().window().maximize();
         driver.get(url);
 
-        WebElement username = driver.findElement(By.xpath("//input[@data-test='username']"));
-        username.sendKeys("standard_user");
-
-
-        WebElement password = driver.findElement(By.xpath("//input[@data-test='password']"));
-        password.sendKeys("secret_sauce");
-
-
-        WebElement buttonLogin = driver.findElement(By.xpath("//input[@data-test='login-button']"));
-        buttonLogin.click();
+        loginPages = new LoginPages(driver);
+        loginPages.setUserName(user);
+        loginPages.setPassword(password);
+        loginPages.clickLogin();
     }
 
     @Test
     public void validarNumeroInventario() {
-        WebElement listaInventario = driver.findElement(By.xpath("//div[@class='inventory_list']"));
+        // WebElement listaInventario = driver.findElement(By.xpath("//div[@class='inventory_list']"));
 
-        try {
-            List<WebElement> elementos = listaInventario.findElements(By.xpath("//div[@class='inventory_item']"));
-            int numero = elementos.size();
-            Assert.assertEquals(6, numero);
-        } catch (NoSuchElementException e) {
-            Assert.fail("No se ha encontrado el elemento");
-        }
+        //List<WebElement> elementos = listaInventario.findElements(By.xpath("//div[@class='inventory_item']"));
+        // int numero = elementos.size();
+        // Assert.assertEquals("No es igual al esperado",6, numero);
+
+        invetarioPages = new InvetarioPages(driver);
+        int numero = invetarioPages.obtenerNumeroElementos(driver);
+        Assert.assertEquals("No es igual al esperado", 6, numero);
+
 
     }
 
     @Test
     public void validarExisteProducto() {
         //hacer de dos formas
-        WebElement camiseta = driver.findElement(By.xpath("//div[@class='inventory_item_name' and contains(text(), 'Sauce Labs Bolt T-Shirt')]"));
-        Assert.assertTrue(camiseta.isDisplayed());
+        //WebElement camiseta = driver.findElement(By.xpath("//div[@class='inventory_item_name' and contains(text(), 'Sauce Labs Bolt T-Shirt')]"));
+        invetarioPages = new InvetarioPages(driver);
+        Assert.assertTrue("No existe este producto", invetarioPages.getCamiseta().isDisplayed());
 
     }
 
     @Test
     public void AniadeProducto() {
-        WebElement add_btn = driver.findElement(By.xpath("//button[@data-test='add-to-cart-sauce-labs-bolt-t-shirt']"));
-        add_btn.click();
-        try {
-            WebElement numero_carrito = driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
-            String numero = numero_carrito.getText();
-            Assert.assertEquals("1", numero);
-        } catch (NoSuchElementException e) {
-            Assert.fail("No se ha encontrado el elemento");
-        }
-
+        // WebElement add_btn = driver.findElement(By.xpath("//button[@data-test='add-to-cart-sauce-labs-bolt-t-shirt']"));
+        //add_btn.click();
+        //WebElement numero_carrito = driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
+        //String numero = numero_carrito.getText();
+        invetarioPages = new InvetarioPages(driver);
+        Assert.assertEquals("El numero de carrito no coincide con el esperado", "1", invetarioPages.obtenerNumeroCarrito());
 
     }
 
@@ -90,7 +89,7 @@ public class Inventario {
 
         WebElement numeroCarrito = driver.findElement(By.xpath("//a[@class='shopping_cart_link']"));
 
-        Assert.assertTrue("Eliminado", numeroCarrito.getText().isEmpty());
+        Assert.assertTrue("No se ha eliminado correctamente", numeroCarrito.getText().isEmpty());
 
 
     }
@@ -119,7 +118,7 @@ public class Inventario {
         WebElement numeroCarrito = driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
 
         String numero = numeroCarrito.getText();
-        Assert.assertEquals("El numero no coincide","3", numero);
+        Assert.assertEquals("El numero no coincide", "3", numero);
     }
 
     @Test
@@ -197,18 +196,21 @@ public class Inventario {
 
         }
 
-        Collections.sort(precio);
-        System.out.println(precio);
 
+        driver.findElement(By.xpath("//select[@data-test='product_sort_container']//option[@value='az']")).click();
+        List<WebElement> elementosSinOrdenar = driver.findElements(By.xpath("//div[@class='inventory_item']//div[@class='inventory_item_price']"));
         List<Double> precioEsperado = new ArrayList<>();
-        precioEsperado.add(7.99);
-        precioEsperado.add(9.99);
-        precioEsperado.add(15.99);
-        precioEsperado.add(15.99);
-        precioEsperado.add(29.99);
-        precioEsperado.add(49.99);
+        for (WebElement elemento : elementosSinOrdenar) {
+            String nombre2 = elemento.getText();
+            String precioElementos2 = nombre2.replace("$", "");
+            Double precioDouble2 = Double.parseDouble(precioElementos2);
+            precio.add(precioDouble2);
 
-        Assert.assertEquals("El resultado de las listas ordenadas de menor a mayor no son iguales", precioEsperado, precio);
+        }
+        Collections.sort(precioEsperado);
+        System.out.println(precioEsperado);
+
+        Assert.assertEquals("El resultado de las listas ordenadas de menor a mayor no son iguales", precio, precioEsperado);
     }
 
     @After
