@@ -17,8 +17,8 @@ public class Login {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
     LoginPages loginPages;
-    String user="standard_user";
-    String password="secret_sauce";
+    String user = "standard_user";
+    String password = "secret_sauce";
 
     @Before
     public void setUp() {

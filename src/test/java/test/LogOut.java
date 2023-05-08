@@ -12,10 +12,16 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.LogOutPages;
+import pages.LoginPages;
 
 public class LogOut {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
+    LoginPages loginPages;
+    LogOutPages logOutPages;
+    String user = "standard_user";
+    String password = "secret_sauce";
 
     @Before
     public void setUp() {
@@ -26,33 +32,15 @@ public class LogOut {
         driver.manage().window().maximize();
         driver.get(url);
 
-        WebElement username = driver.findElement(By.xpath("//input[@data-test='username']"));
-        username.sendKeys("standard_user");
-
-
-        WebElement password = driver.findElement(By.xpath("//input[@data-test='password']"));
-        password.sendKeys("secret_sauce");
-
-
-        WebElement buttonLogin = driver.findElement(By.xpath("//input[@data-test='login-button']"));
-        buttonLogin.click();
+        loginPages = new LoginPages(driver);
+        loginPages.login(user, password);
     }
 
     @Test
     public void comprobarLogOut() {
-        WebElement menu = driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']"));
-        menu.click();
+        logOutPages = new LogOutPages(driver);
+        logOutPages.comprobarLogOut();
 
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='logout_sidebar_link']")));
-
-        WebElement logout = driver.findElement(By.xpath("//a[@id='logout_sidebar_link']"));
-        logout.click();
-
-        String actualUrl = driver.getCurrentUrl();
-
-        Assert.assertEquals("La pagina no es correcta",url, actualUrl);
     }
 
     @After

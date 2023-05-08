@@ -10,12 +10,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import pages.CarritoPages;
+import pages.InvetarioPages;
+import pages.LoginPages;
 
 import java.util.List;
 
 public class Carrito {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
+    CarritoPages carritopages;
+    LoginPages loginPages;
+    String user = "standard_user";
+    String password = "secret_sauce";
 
     @Before
     public void setUp() {
@@ -26,42 +33,15 @@ public class Carrito {
         driver.manage().window().maximize();
         driver.get(url);
 
-        WebElement username = driver.findElement(By.xpath("//input[@data-test='username']"));
-        username.sendKeys("standard_user");
-
-
-        WebElement password = driver.findElement(By.xpath("//input[@data-test='password']"));
-        password.sendKeys("secret_sauce");
-
-
-        WebElement buttonLogin = driver.findElement(By.xpath("//input[@data-test='login-button']"));
-        buttonLogin.click();
+        loginPages = new LoginPages(driver);
+        loginPages.login(user, password);
 
     }
 
     @Test
     public void eliminarProductoCarrito() {
-        WebElement containerDiv = driver.findElement(By.xpath("//div[@class='inventory_list']"));
-        int tamanio = containerDiv.findElements(By.xpath("//div[@class='inventory_item']")).size();
-        int num1 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
-        int num2 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
-        while (num2 == num1) {
-            num2 = (int) (Math.random() * (tamanio - 1 + 1)) + 1;
-        }
-        WebElement elemento1 = containerDiv.findElement(By.xpath("//div[@class='inventory_item'][" + num1 + "]//button[@class='btn btn_primary btn_small btn_inventory']"));
-        elemento1.click();
-        WebElement elemento2 = containerDiv.findElement(By.xpath("//div[@class='inventory_item'][" + num2 + "]//button[@class='btn btn_primary btn_small btn_inventory']"));
-        elemento2.click();
-
-        WebElement carrito = driver.findElement(By.xpath("//a[@class='shopping_cart_link']"));
-        carrito.click();
-
-        int num3 = (int) (Math.random() * (2 - 1 + 1)) + 1;
-        WebElement eliminar = driver.findElement(By.xpath("//div[@class='cart_list'][" + num3 + "]//button[@class='btn btn_secondary btn_small cart_button']"));
-        eliminar.click();
-
-        WebElement numeroCarrito = driver.findElement(By.xpath("//span[@class='shopping_cart_badge']"));
-        Assert.assertEquals("El producto no se ha eliminado correctamente",numeroCarrito.getText(), "1");
+        carritopages = new CarritoPages(driver);
+        carritopages.eliminarProductoCarrito();
 
     }
 

@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class VuelingJUnit {
     String url = "http://tickets.vueling.com";
     WebDriver driver;
-
+    WebDriverWait wait = new WebDriverWait(driver, 5);
     @Before
     public void SetUp() {
         WebDriverManager.chromedriver().setup();
@@ -35,7 +35,7 @@ public class VuelingJUnit {
     @Test
     public void comprarBillete() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+
         WebElement cookies = driver.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']"));
         cookies.click();
 
