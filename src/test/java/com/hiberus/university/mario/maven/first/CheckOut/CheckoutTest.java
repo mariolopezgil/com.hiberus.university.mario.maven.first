@@ -1,22 +1,21 @@
-package test;
+package com.hiberus.university.mario.maven.first.CheckOut;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import pages.LoginPages;
+import com.hiberus.university.mario.maven.first.CheckOut.CheckoutPages;
+import com.hiberus.university.mario.maven.first.Login.LoginPages;
 
-public class Login {
+public class CheckoutTest {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
     LoginPages loginPages;
+
+    CheckoutPages checkoutPages;
     String user = "standard_user";
     String password = "secret_sauce";
 
@@ -29,26 +28,21 @@ public class Login {
         driver.manage().window().maximize();
         driver.get(url);
 
+        loginPages = new LoginPages(driver);
+        loginPages.login(user, password);
     }
 
     @Test
-    public void validationCorrecto() {
-        loginPages= new LoginPages(driver);
-        loginPages.setUserName(user);
-        loginPages.setPassword(password);
-        loginPages.clickLogin();
-
-        Assert.assertEquals("El login es incorrecto",url,driver.getCurrentUrl());
+    public void comprobarPrecioFinal() {
+        checkoutPages = new CheckoutPages(driver);
+        checkoutPages.verificarPrecioPedido();
     }
 
     @Test
-    public void validationIncorrecto() {
-        loginPages= new LoginPages(driver);
-        loginPages.setUserName(user);
-        loginPages.setPassword(password);
-        loginPages.clickLogin();
+    public void RealizarPedido() {
+        checkoutPages = new CheckoutPages(driver);
+        checkoutPages.VerificarMensajePedido();
 
-        Assert.assertEquals("No sale el elemento que contiene el error",loginPages.getLoginError().isDisplayed());
     }
 
     @After

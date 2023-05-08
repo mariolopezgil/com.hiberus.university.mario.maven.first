@@ -1,25 +1,17 @@
-package test;
+package com.hiberus.university.mario.maven.first.Login;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import pages.CarritoPages;
-import pages.InvetarioPages;
-import pages.LoginPages;
 
-import java.util.List;
-
-public class Carrito {
+public class LoginTest {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
-    CarritoPages carritopages;
     LoginPages loginPages;
     String user = "standard_user";
     String password = "secret_sauce";
@@ -33,16 +25,26 @@ public class Carrito {
         driver.manage().window().maximize();
         driver.get(url);
 
-        loginPages = new LoginPages(driver);
-        loginPages.login(user, password);
-
     }
 
     @Test
-    public void eliminarProductoCarrito() {
-        carritopages = new CarritoPages(driver);
-        carritopages.eliminarProductoCarrito();
+    public void validationCorrecto() {
+        loginPages= new LoginPages(driver);
+        loginPages.setUserName(user);
+        loginPages.setPassword(password);
+        loginPages.clickLogin();
 
+        Assert.assertEquals("El login es incorrecto",url,driver.getCurrentUrl());
+    }
+
+    @Test
+    public void validationIncorrecto() {
+        loginPages= new LoginPages(driver);
+        loginPages.setUserName(user);
+        loginPages.setPassword(password);
+        loginPages.clickLogin();
+
+        Assert.assertEquals("No sale el elemento que contiene el error",loginPages.getLoginError().isDisplayed());
     }
 
     @After

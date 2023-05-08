@@ -1,4 +1,4 @@
-package pages;
+package com.hiberus.university.mario.maven.first.Login;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

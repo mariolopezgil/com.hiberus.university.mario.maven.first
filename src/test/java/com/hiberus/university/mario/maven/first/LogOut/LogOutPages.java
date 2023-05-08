@@ -1,4 +1,4 @@
-package pages;
+package com.hiberus.university.mario.maven.first.LogOut;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;

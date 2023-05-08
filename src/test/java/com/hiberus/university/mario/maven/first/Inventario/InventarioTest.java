@@ -1,26 +1,16 @@
-package test;
+package com.hiberus.university.mario.maven.first.Inventario;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.InvetarioPages;
-import pages.LoginPages;
+import com.hiberus.university.mario.maven.first.Login.LoginPages;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-public class Inventario {
+public class InventarioTest {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
     LoginPages loginPages;
