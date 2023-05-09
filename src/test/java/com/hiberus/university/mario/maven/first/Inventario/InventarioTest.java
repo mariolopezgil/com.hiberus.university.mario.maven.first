@@ -8,12 +8,12 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import com.hiberus.university.mario.maven.first.Login.LoginPages;
+import com.hiberus.university.mario.maven.first.Login.LoginPages9;
 
 public class InventarioTest {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
-    LoginPages loginPages;
+    LoginPages9 loginPages;
 
     InvetarioPages invetarioPages;
     String user = "standard_user";
@@ -28,7 +28,7 @@ public class InventarioTest {
         driver.manage().window().maximize();
         driver.get(url);
 
-        loginPages = new LoginPages(driver);
+        loginPages = new LoginPages9(driver);
         loginPages.login(user, password);
     }
 

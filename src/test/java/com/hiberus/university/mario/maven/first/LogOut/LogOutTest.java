@@ -7,12 +7,12 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import com.hiberus.university.mario.maven.first.Login.LoginPages;
+import com.hiberus.university.mario.maven.first.Login.LoginPages9;
 
 public class LogOutTest {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
-    LoginPages loginPages;
+    LoginPages9 loginPages;
     LogOutPages logOutPages;
     String user = "standard_user";
     String password = "secret_sauce";
@@ -26,7 +26,7 @@ public class LogOutTest {
         driver.manage().window().maximize();
         driver.get(url);
 
-        loginPages = new LoginPages(driver);
+        loginPages = new LoginPages9(driver);
         loginPages.login(user, password);
     }
 

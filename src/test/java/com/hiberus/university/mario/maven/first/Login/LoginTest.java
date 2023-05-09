@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class LoginTest {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
-    LoginPages loginPages;
+    LoginPages9 loginPages;
     String user = "standard_user";
     String password = "secret_sauce";
 
@@ -29,7 +29,7 @@ public class LoginTest {
 
     @Test
     public void validationCorrecto() {
-        loginPages= new LoginPages(driver);
+        loginPages= new LoginPages9(driver);
         loginPages.setUserName(user);
         loginPages.setPassword(password);
         loginPages.clickLogin();
@@ -39,7 +39,7 @@ public class LoginTest {
 
     @Test
     public void validationIncorrecto() {
-        loginPages= new LoginPages(driver);
+        loginPages= new LoginPages9(driver);
         loginPages.setUserName(user);
         loginPages.setPassword(password);
         loginPages.clickLogin();

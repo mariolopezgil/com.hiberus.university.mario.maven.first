@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPages {
+public class LoginPages9 {
     WebDriver driver;
 
     By usuario = By.xpath("//input[@data-test='username']");
@@ -15,7 +15,7 @@ public class LoginPages {
 
     By btn_login = By.xpath("//input[@data-test='login-button']");
 
-    public LoginPages(WebDriver driver) {
+    public LoginPages9(WebDriver driver) {
 
         this.driver = driver;
 

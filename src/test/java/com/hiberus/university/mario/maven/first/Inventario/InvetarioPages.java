@@ -59,6 +59,7 @@ public class InvetarioPages {
     }
 
     public String obtenerNumeroCarrito(){
+
         return driver.findElement(numeroCarrito).getText();
     }
 
