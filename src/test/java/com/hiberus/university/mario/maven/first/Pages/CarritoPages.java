@@ -27,20 +27,21 @@ public class CarritoPages extends AbstractPage{
     private WebElement numeroCarrito;
     @FindBy(xpath = "//button[@class='btn btn_secondary btn_small cart_button']")
     private List <WebElement> lisatRemove;
-
+    @FindBy(xpath ="//div[@class='inventory_item']//button[@class='btn btn_primary btn_small btn_inventory']" )
+    private List <WebElement> addItem;
+1
     public static final String PAGE_URL = "https://www.saucedemo.com/";
     CarritoPages(WebDriver driver) {
         super(driver);
     }
-    public void eliminarProductoCarrito(List <WebElement> a) {
+    public void eliminarProductoCarrito() {
         log.info("Eliminando un producto random...");
         try {
-            a=lisatRemove;
             List<Integer> lista = numerosAleatorios(1, listaCarrito.size());
             carrito.click();
             for (int i = 0; i < lista.size(); i++) {
                 int numero = lista.get(i);
-                a.get(numero).click();
+                lisatRemove.get(numero).click();
 
             }
 
@@ -56,7 +57,7 @@ public class CarritoPages extends AbstractPage{
         Random random = new Random();
 
         while (listaNumeros.size() < cantidad) {
-            int num = random.nextInt(listaCarrito.size()) + 1;
+            int num = random.nextInt(itemList.size()) + 1;
             if (!listaNumeros.contains(num)) {
                 listaNumeros.add(num);
             }
@@ -65,19 +66,19 @@ public class CarritoPages extends AbstractPage{
 
     }
 
-    public List aniadir2productos() {
+    public void aniadir2productos() {
         log.info("Comprando 2 productos aleatorios...");
         try {
-            List<Integer> lista = numerosAleatorios(2, listaCarrito.size());
+            List<Integer> lista = numerosAleatorios(2, itemList.size());
             for (int i = 0; i < lista.size(); i++) {
                 int numero = lista.get(i);
-                itemList.get(numero).click();
+                addItem.get(numero).click();
 
             }
 
         } catch (TimeoutException timeoutException) {
             log.info("Timeout compra 2 productos: " + timeoutException.getClass().getSimpleName());
         }
-        return itemList;
+
     }
 }

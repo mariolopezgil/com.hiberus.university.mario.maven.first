@@ -34,6 +34,10 @@ public class CheckOutPages extends AbstractPage{
     private WebElement stringPrecios;
     @FindBy(xpath ="//div[@class='complete-text']")
     private WebElement mensaje;
+    @FindBy(xpath = "//button[@class='btn btn_primary btn_small btn_inventory']")
+    private List <WebElement> listaBotonesAniadir;
+    @FindBy(xpath = "//div[@class='inventory_item']//div[@class='inventory_item_price']")
+    private List<WebElement> itemPrice;
 
     public static final String PAGE_URL = "https://www.saucedemo.com/";
     private static final String nombreUser="a";
@@ -63,12 +67,10 @@ public class CheckOutPages extends AbstractPage{
             List<Integer> lista = numerosAleatorios(3, 6);
             for (int i = 0; i < lista.size(); i++) {
                 int numero = lista.get(i);
-                WebElement productoAleatorio = (WebElement) By.xpath("//div[@class='inventory_item'][" + numero + "]//div[@class='inventory_item_price']");
-                String formato= productoAleatorio.getText().replace("$","");
+                String formato=  itemPrice.get(numero).getText().replace("$","");
                 Double precio=Double.parseDouble(formato);
                 PrecioTotal+=precio;
-                By xpath = By.xpath("//div[@class='inventory_item'][" + numero + "]//button[@class='btn btn_primary btn_small btn_inventory']");
-                wait.until(ExpectedConditions.presenceOfElementLocated(xpath)).click();
+                listaBotonesAniadir.get(numero).click();
 
             }
             carrito.click();
@@ -93,8 +95,8 @@ public class CheckOutPages extends AbstractPage{
             List<Integer> lista = numerosAleatorios(1, 6);
             for (int i = 0; i < lista.size(); i++) {
                 int numero = lista.get(i);
-                By xpath = By.xpath("//div[@class='inventory_item'][" + numero + "]//button[@class='btn btn_primary btn_small btn_inventory']");
-                wait.until(ExpectedConditions.presenceOfElementLocated(xpath)).click();
+                listaBotonesAniadir.get(numero).click();
+
 
             }
             carrito.click();
