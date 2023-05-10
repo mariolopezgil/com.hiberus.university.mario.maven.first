@@ -1,19 +1,21 @@
 package com.hiberus.university.mario.maven.first.LogOut;
 
+import com.hiberus.university.mario.maven.first.Pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import com.hiberus.university.mario.maven.first.Login.LoginPages9;
 
 public class LogOutTest {
     String url = "https://www.saucedemo.com/";
     WebDriver driver;
-    LoginPages9 loginPages;
+
     LogOutPages logOutPages;
+    LoginPage loginPage;
     String user = "standard_user";
     String password = "secret_sauce";
 
@@ -24,17 +26,21 @@ public class LogOutTest {
         driver = new FirefoxDriver(options);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.get(url);
+        PageFactory.start(driver);
+        driver.get(InventarioPages.PAGE_URL);
+        PageFactory pagesFactory= PageFactory.getInstance();
+        logOutPages =pagesFactory.getLogOutPages();
+        loginPage=pagesFactory.getLoginPage();
+        loginPage.login(user,password);
 
-        loginPages = new LoginPages9(driver);
-        loginPages.login(user, password);
+
+
     }
 
     @Test
     public void comprobarLogOut() {
-        logOutPages = new LogOutPages(driver);
-        logOutPages.comprobarLogOut();
 
+        Assert.assertEquals("El login es incorrecto",LoginPage.PAGE_URL,logOutPages.comprobarLogOut());
     }
 
     @After

@@ -1,5 +1,8 @@
 package com.hiberus.university.mario.maven.first.Inventario;
 
+import com.hiberus.university.mario.maven.first.Pages.InventarioPages;
+import com.hiberus.university.mario.maven.first.Pages.LoginPage;
+import com.hiberus.university.mario.maven.first.Pages.PageFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
@@ -8,17 +11,13 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import com.hiberus.university.mario.maven.first.Login.LoginPages9;
 
 public class InventarioTest {
-    String url = "https://www.saucedemo.com/";
     WebDriver driver;
-    LoginPages9 loginPages;
-
-    InvetarioPages invetarioPages;
     String user = "standard_user";
     String password = "secret_sauce";
-
+    InventarioPages inventarioPages;
+    LoginPage loginPage;
     @Before
     public void setUp() {
         WebDriverManager.firefoxdriver().setup();
@@ -26,63 +25,66 @@ public class InventarioTest {
         driver = new FirefoxDriver(options);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
-        driver.get(url);
+        PageFactory.start(driver);
+        PageFactory pagesFactory= PageFactory.getInstance();
+        loginPage=pagesFactory.getLoginPage();
+        driver.get(LoginPage.PAGE_URL);
+        loginPage.login(user,password);
+        inventarioPages= pagesFactory.getInventarioPages();
 
-        loginPages = new LoginPages9(driver);
-        loginPages.login(user, password);
+
+
+
     }
 
     @Test
-    public void validarNumeroInventario() {
-        invetarioPages = new InvetarioPages(driver);
-        int numero = invetarioPages.obtenerNumeroElementos(driver);
-        Assert.assertEquals("No es igual al esperado", 6, numero);
+    public void validarNumeroInventario() throws InterruptedException {
+        ;
+        Assert.assertEquals("No es igual al esperado", 6,inventarioPages.obtenerNumeroElementos() );
     }
 
     @Test
     public void validarExisteProducto() {
-        invetarioPages = new InvetarioPages(driver);
-        Assert.assertTrue("No existe este producto", invetarioPages.getCamiseta().isDisplayed());
+
+        Assert.assertTrue("No existe este producto", inventarioPages.getCamiseta());
     }
 
     @Test
-    public void AniadeProducto() {
-        invetarioPages = new InvetarioPages(driver);
-        Assert.assertEquals("El numero de carrito no coincide con el esperado", "1", invetarioPages.obtenerNumeroCarrito());
+    public void AniadeProducto() throws InterruptedException {
+        inventarioPages.clickAniadir();
+
+        Assert.assertEquals("El numero de carrito no coincide con el esperado", "1",inventarioPages.obtenerNumeroCarrito() );
     }
 
     @Test
-    public void EliminarProducto() {
-        invetarioPages = new InvetarioPages(driver);
-        invetarioPages.clickAniadirSudaderayEliminarla();
-        Assert.assertTrue("No se ha eliminado correctamente", invetarioPages.obtenerNumeroCarrito().isEmpty());
+    public void EliminarProducto() throws InterruptedException {
+        inventarioPages.clickAniadirSudaderayEliminarla();
+        Assert.assertTrue("El numero de carrito no coincide con el esperado", inventarioPages.addSauceLabsEnabled());
     }
 
     @Test
     public void Aniadir3Productos() {
-        invetarioPages = new InvetarioPages(driver);
-        invetarioPages.aniadir3productos();
-        Assert.assertEquals("El numero no coincide", "3", invetarioPages.obtenerNumeroCarrito());
+        inventarioPages.aniadir3productos();
+
+        Assert.assertEquals("El numero no coincide", "3", inventarioPages.obtenerNumeroCarrito());
     }
 
     @Test
     public void OrdenAlfabeticoInventario() {
-        invetarioPages = new InvetarioPages(driver);
-        invetarioPages.ordenAlfabetico();
+        inventarioPages.ordenAlfabetico();
 
     }
 
     @Test
     public void OrdenPrecioInventarioMayorAMenor() {
+        inventarioPages.mayorMenor();
 
-        invetarioPages = new InvetarioPages(driver);
-        invetarioPages.mayorMenor();
     }
 
     @Test
     public void OrdenPrecioMenorAMayor() {
-        invetarioPages = new InvetarioPages(driver);
-        invetarioPages.menorMayor();
+        inventarioPages.menorMayor();
+
     }
 
     @After

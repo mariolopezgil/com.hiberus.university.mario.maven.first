@@ -1,25 +1,33 @@
 package com.hiberus.university.mario.maven.first.Pages;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.PageFactory;
+
+
 @Slf4j
-public class LogOut extends AbstractPage{
-    @FindBy(xpath ="//button[@id='react-burger-menu-btn']" )
+public class LogOutPages extends AbstractPage {
+    @FindBy(xpath = "//button[@id='react-burger-menu-btn']")
     private WebElement menu;
-    @FindBy(xpath ="//a[@id='logout_sidebar_link']" )
+    @FindBy(xpath = "//a[@id='logout_sidebar_link']")
     private WebElement logOut;
 
     public static final String PAGE_URL = "https://www.saucedemo.com/";
-    LogOut(WebDriver driver) {
+
+    LogOutPages(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
     }
-    public void comprobarLogOut() {
+
+    @Override
+    public WebElement getPageLoadedTestElement() {
+        return null;
+    }
+
+    public String comprobarLogOut() {
         log.info("LogOut in...");
         try {
             menu.click();
@@ -28,5 +36,6 @@ public class LogOut extends AbstractPage{
         } catch (TimeoutException timeoutException) {
             log.info("Timeout clicking logOut: " + timeoutException.getClass().getSimpleName());
         }
+        return getDriver().getCurrentUrl();
     }
 }

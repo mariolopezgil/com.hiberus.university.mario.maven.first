@@ -1,79 +1,77 @@
 package com.hiberus.university.mario.maven.first.Pages;
 
+import com.hiberus.university.mario.maven.first.Utils.NumerosAleatorios;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+import org.openqa.selenium.support.PageFactory;
+
 
 @Slf4j
-public class CheckOutPages extends AbstractPage{
-    @FindBy(xpath ="//a[@class='shopping_cart_link']")
+public class CheckOutPages extends AbstractPage {
+    NumerosAleatorios numerosAleatorios = new NumerosAleatorios();
+    @FindBy(xpath = "//a[@class='shopping_cart_link']")
     private WebElement carrito;
-    @FindBy(xpath ="//a[@class='shopping_cart_link']")
+    @FindBy(xpath = "//button[@id='checkout']")
     private WebElement checkOut;
-    @FindBy(xpath ="//a[@class='shopping_cart_link']")
+    @FindBy(xpath = "//input[@id='first-name']")
     private WebElement nombre;
-    @FindBy(xpath ="//a[@class='shopping_cart_link']")
+    @FindBy(xpath = "//input[@id='last-name']")
     private WebElement apellidos;
-    @FindBy(xpath ="//a[@class='shopping_cart_link']")
+    @FindBy(xpath = "//input[@id='postal-code']")
     private WebElement cod;
-    @FindBy(xpath ="//a[@class='shopping_cart_link']")
+    @FindBy(xpath = "//button[@id='finish']")
     private WebElement finish;
-    @FindBy(xpath ="//a[@class='shopping_cart_link']")
+    @FindBy(xpath = "//input[@data-test='continue']")
     private WebElement continuar;
-    @FindBy(xpath ="//div[@class='summary_subtotal_label']")
+    @FindBy(xpath = "//div[@class='summary_subtotal_label']")
     private WebElement stringPrecios;
-    @FindBy(xpath ="//div[@class='complete-text']")
+    @FindBy(xpath = "//div[@class='complete-text']")
     private WebElement mensaje;
     @FindBy(xpath = "//button[@class='btn btn_primary btn_small btn_inventory']")
-    private List <WebElement> listaBotonesAniadir;
-    @FindBy(xpath = "//div[@class='inventory_item']//div[@class='inventory_item_price']")
+    private List<WebElement> listaBotonesAniadir;
+    @FindBy(xpath = "//div[@class='inventory_item_price']")
     private List<WebElement> itemPrice;
 
-    public static final String PAGE_URL = "https://www.saucedemo.com/";
-    private static final String nombreUser="a";
-    private static final String apellidoUser="a";
-    private static final String  codUser="1";
+    public static final String PAGE_URL = "https://www.saucedemo.com/cart.html";
+    private static final String nombreUser = "a";
+    private static final String apellidoUser = "a";
+    private static final String codUser = "1";
+
+
     CheckOutPages(WebDriver driver) {
         super(driver);
-    }
-    public List numerosAleatorios(int cantidad, int tamanio){
-        List<Integer> listaNumeros = new ArrayList<>();
-        Random random = new Random();
-
-        while (listaNumeros.size() < cantidad) {
-            int num = random.nextInt(tamanio) + 1;
-            if (!listaNumeros.contains(num)) {
-                listaNumeros.add(num);
-            }
-        }
-        return listaNumeros;
-
+        PageFactory.initElements(driver, this);
     }
 
-    public void verificarPrecioPedido(){
+    @Override
+    public WebElement getPageLoadedTestElement() {
+        return checkOut;
+    }
+
+    public Double verificarPrecioPedido() {
         log.info("Verificando...");
+        Double precioItems=00.0;
         try {
-            Double PrecioTotal=0.00;
-            List<Integer> lista = numerosAleatorios(3, 6);
-            for (int i = 0; i < lista.size(); i++) {
+            for (int i = 0; i < 3; i++) {
+                List<Integer> lista = numerosAleatorios.numerosAleatorios(3, listaBotonesAniadir.size());
                 int numero = lista.get(i);
-                String formato=  itemPrice.get(numero).getText().replace("$","");
-                Double precio=Double.parseDouble(formato);
-                PrecioTotal+=precio;
-                listaBotonesAniadir.get(numero).click();
-
+                listaBotonesAniadir.get(numero-1).click();
             }
+
             carrito.click();
+
+            Double PrecioTotal = 0.00;
+            for (int i = 0; i < 3; i++) {
+            String formato = itemPrice.get(i).getText().replace("$", "");
+            Double precio = Double.parseDouble(formato);
+            PrecioTotal += precio;
+            }
+
             checkOut.click();
             nombre.sendKeys(nombreUser);
             apellidos.sendKeys(apellidoUser);
@@ -81,21 +79,23 @@ public class CheckOutPages extends AbstractPage{
             continuar.click();
             String[] soloPrecio = stringPrecios.getText().split("\\$");
             String numero = soloPrecio[1];
-            Double precioItems= Double.parseDouble(numero);
-            finish.click();
+            precioItems = Double.parseDouble(numero);
+            Assert.assertEquals(precioItems,PrecioTotal);
 
         } catch (TimeoutException timeoutException) {
             log.info("Timeout clicking login: " + timeoutException.getClass().getSimpleName());
         }
 
+        return precioItems;
     }
-    public void VerificarMensajePedido(){
+
+    public String VerificarMensajePedido() {
         log.info("Verificando mensaje de pedido...");
         try {
-            List<Integer> lista = numerosAleatorios(1, 6);
+            List<Integer> lista = numerosAleatorios.numerosAleatorios(1, 6);
             for (int i = 0; i < lista.size(); i++) {
                 int numero = lista.get(i);
-                listaBotonesAniadir.get(numero).click();
+                listaBotonesAniadir.get(numero-1).click();
 
 
             }
@@ -110,6 +110,6 @@ public class CheckOutPages extends AbstractPage{
         } catch (TimeoutException timeoutException) {
             log.info("Timeout verificar pedido: " + timeoutException.getClass().getSimpleName());
         }
-
+        return mensaje.getText();
     }
 }
