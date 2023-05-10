@@ -10,28 +10,35 @@ public class PageFactory {
     private final LogOutPages logOut;
     private final CheckOutPages checkOutPages;
     private final WebDriver driver;
-    private PageFactory(WebDriver driver){
+
+    private PageFactory(WebDriver driver) {
         CheckOutPages checkOutPages1;
-        this.driver=driver;
-        loginPage= new LoginPage(driver);
+        this.driver = driver;
+        loginPage = new LoginPage(driver);
         inventarioPages = new InventarioPages(driver);
         carritoPages = new CarritoPages(driver);
         checkOutPages = new CheckOutPages(driver);
-        logOut= new LogOutPages(driver);
+        logOut = new LogOutPages(driver);
     }
-    public static void start(WebDriver driver){pagesFactory= new PageFactory(driver);}
+
+    public static void start(WebDriver driver) {
+        pagesFactory = new PageFactory(driver);
+    }
 
 
-    public WebDriver getDriver(){
+    public WebDriver getDriver() {
         return driver;
     }
-    public static PageFactory getInstance(){
+
+    public static PageFactory getInstance() {
         return pagesFactory;
     }
-    public LoginPage getLoginPage(){
+
+    public LoginPage getLoginPage() {
         return loginPage;
     }
-    public InventarioPages getInventarioPages(){
+
+    public InventarioPages getInventarioPages() {
         return inventarioPages;
     }
 
@@ -43,6 +50,7 @@ public class PageFactory {
         return carritoPages;
     }
 
-    public LogOutPages getLogOutPages() {return logOut;
+    public LogOutPages getLogOutPages() {
+        return logOut;
     }
 }

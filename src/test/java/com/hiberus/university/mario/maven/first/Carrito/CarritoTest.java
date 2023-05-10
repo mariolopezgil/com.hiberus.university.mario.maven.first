@@ -29,12 +29,10 @@ public class CarritoTest {
         driver.manage().window().maximize();
         PageFactory.start(driver);
         driver.get(LoginPage.PAGE_URL);
-        PageFactory pagesFactory= PageFactory.getInstance();
-        carritoPages= pagesFactory.getCarritoPages();
-        loginPage=pagesFactory.getLoginPage();
-        loginPage.login(user,password);
-
-
+        PageFactory pagesFactory = PageFactory.getInstance();
+        carritoPages = pagesFactory.getCarritoPages();
+        loginPage = pagesFactory.getLoginPage();
+        loginPage.login(user, password);
 
 
     }

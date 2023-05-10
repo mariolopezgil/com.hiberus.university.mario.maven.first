@@ -7,9 +7,11 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -56,7 +58,7 @@ public class InventarioPages extends AbstractPage {
         return removeSauceLabs;
     }
 
-    public int obtenerNumeroElementos()  {
+    public int obtenerNumeroElementos() {
 
         int cantidadElementos = itemList.size();
 
@@ -106,7 +108,7 @@ public class InventarioPages extends AbstractPage {
             for (int i = 0; i < 3; i++) {
                 List<Integer> lista = numerosAleatorios.numerosAleatorios(3, listaBotonesAniadir.size());
                 int numero = lista.get(i);
-                listaBotonesAniadir.get(numero-1).click();
+                listaBotonesAniadir.get(numero - 1).click();
             }
 
         } catch (TimeoutException timeoutException) {
@@ -131,7 +133,7 @@ public class InventarioPages extends AbstractPage {
             for (WebElement elemento : itemName) {
                 nombresXpected.add(elemento.getText());
             }
-            Assert.assertEquals(nombresXpected,nombres);
+            Assert.assertEquals(nombresXpected, nombres);
         } catch (TimeoutException timeoutException) {
             log.info("Timeout: " + timeoutException.getClass().getSimpleName());
         }
@@ -161,7 +163,7 @@ public class InventarioPages extends AbstractPage {
                 Double precioDouble = Double.parseDouble(precioElementos2);
                 preciosXpected.add(precioDouble);
             }
-            Assert.assertEquals(preciosXpected,precios);
+            Assert.assertEquals(preciosXpected, precios);
         } catch (TimeoutException timeoutException) {
             log.info("Timeout: " + timeoutException.getClass().getSimpleName());
         }
@@ -192,11 +194,12 @@ public class InventarioPages extends AbstractPage {
                 preciosXpected.add(precioDouble);
 
             }
-            Assert.assertEquals(preciosXpected,precios);
+            Assert.assertEquals(preciosXpected, precios);
         } catch (TimeoutException timeoutException) {
             log.info("Timeout: " + timeoutException.getClass().getSimpleName());
         }
     }
+
     public boolean addSauceLabsEnabled() {
 
         return addSauceLabs.isEnabled();

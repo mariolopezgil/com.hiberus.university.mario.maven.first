@@ -7,7 +7,9 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
+
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -55,21 +57,21 @@ public class CheckOutPages extends AbstractPage {
 
     public Double verificarPrecioPedido() {
         log.info("Verificando...");
-        Double precioItems=00.0;
+        Double precioItems = 00.0;
         try {
             for (int i = 0; i < 3; i++) {
                 List<Integer> lista = numerosAleatorios.numerosAleatorios(3, listaBotonesAniadir.size());
                 int numero = lista.get(i);
-                listaBotonesAniadir.get(numero-1).click();
+                listaBotonesAniadir.get(numero - 1).click();
             }
 
             carrito.click();
 
             Double PrecioTotal = 0.00;
             for (int i = 0; i < 3; i++) {
-            String formato = itemPrice.get(i).getText().replace("$", "");
-            Double precio = Double.parseDouble(formato);
-            PrecioTotal += precio;
+                String formato = itemPrice.get(i).getText().replace("$", "");
+                Double precio = Double.parseDouble(formato);
+                PrecioTotal += precio;
             }
 
             checkOut.click();
@@ -80,7 +82,7 @@ public class CheckOutPages extends AbstractPage {
             String[] soloPrecio = stringPrecios.getText().split("\\$");
             String numero = soloPrecio[1];
             precioItems = Double.parseDouble(numero);
-            Assert.assertEquals(precioItems,PrecioTotal);
+            Assert.assertEquals(precioItems, PrecioTotal);
 
         } catch (TimeoutException timeoutException) {
             log.info("Timeout clicking login: " + timeoutException.getClass().getSimpleName());
@@ -95,7 +97,7 @@ public class CheckOutPages extends AbstractPage {
             List<Integer> lista = numerosAleatorios.numerosAleatorios(1, 6);
             for (int i = 0; i < lista.size(); i++) {
                 int numero = lista.get(i);
-                listaBotonesAniadir.get(numero-1).click();
+                listaBotonesAniadir.get(numero - 1).click();
 
 
             }

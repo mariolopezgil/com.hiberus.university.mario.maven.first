@@ -18,6 +18,7 @@ public class InventarioTest {
     String password = "secret_sauce";
     InventarioPages inventarioPages;
     LoginPage loginPage;
+
     @Before
     public void setUp() {
         WebDriverManager.firefoxdriver().setup();
@@ -26,13 +27,11 @@ public class InventarioTest {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         PageFactory.start(driver);
-        PageFactory pagesFactory= PageFactory.getInstance();
-        loginPage=pagesFactory.getLoginPage();
+        PageFactory pagesFactory = PageFactory.getInstance();
+        loginPage = pagesFactory.getLoginPage();
         driver.get(LoginPage.PAGE_URL);
-        loginPage.login(user,password);
-        inventarioPages= pagesFactory.getInventarioPages();
-
-
+        loginPage.login(user, password);
+        inventarioPages = pagesFactory.getInventarioPages();
 
 
     }
@@ -40,7 +39,7 @@ public class InventarioTest {
     @Test
     public void validarNumeroInventario() throws InterruptedException {
         ;
-        Assert.assertEquals("No es igual al esperado", 6,inventarioPages.obtenerNumeroElementos() );
+        Assert.assertEquals("No es igual al esperado", 6, inventarioPages.obtenerNumeroElementos());
     }
 
     @Test
@@ -53,7 +52,7 @@ public class InventarioTest {
     public void AniadeProducto() throws InterruptedException {
         inventarioPages.clickAniadir();
 
-        Assert.assertEquals("El numero de carrito no coincide con el esperado", "1",inventarioPages.obtenerNumeroCarrito() );
+        Assert.assertEquals("El numero de carrito no coincide con el esperado", "1", inventarioPages.obtenerNumeroCarrito());
     }
 
     @Test

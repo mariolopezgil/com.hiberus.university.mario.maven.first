@@ -6,7 +6,9 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
+
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -45,7 +47,7 @@ public class CarritoPages extends AbstractPage {
             carrito.click();
             for (int i = 0; i < lista.size(); i++) {
                 int numero = lista.get(i);
-                lisatRemove.get(numero-1).click();
+                lisatRemove.get(numero - 1).click();
 
             }
 
@@ -62,7 +64,7 @@ public class CarritoPages extends AbstractPage {
             List<Integer> lista = numerosAleatorios.numerosAleatorios(2, 6);
             for (int i = 0; i < lista.size(); i++) {
                 int numero = lista.get(i);
-                addItem.get(numero-1).click();
+                addItem.get(numero - 1).click();
 
             }
 

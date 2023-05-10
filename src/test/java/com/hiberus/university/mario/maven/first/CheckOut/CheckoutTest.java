@@ -27,11 +27,10 @@ public class CheckoutTest {
         driver.manage().window().maximize();
         PageFactory.start(driver);
         driver.get(CarritoPages.PAGE_URL);
-        PageFactory pagesFactory= PageFactory.getInstance();
-        checkOutPages= pagesFactory.getCheckOutPages();
-        loginPage=pagesFactory.getLoginPage();
-        loginPage.login(user,password);
-
+        PageFactory pagesFactory = PageFactory.getInstance();
+        checkOutPages = pagesFactory.getCheckOutPages();
+        loginPage = pagesFactory.getLoginPage();
+        loginPage.login(user, password);
 
 
     }
@@ -43,7 +42,7 @@ public class CheckoutTest {
 
     @Test
     public void RealizarPedido() {
-        Assert.assertEquals("No es el mismo mensaje","Your order has been dispatched, and will arrive just as fast as the pony can get there!",checkOutPages.VerificarMensajePedido());
+        Assert.assertEquals("No es el mismo mensaje", "Your order has been dispatched, and will arrive just as fast as the pony can get there!", checkOutPages.VerificarMensajePedido());
 
     }
 

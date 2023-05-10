@@ -66,7 +66,8 @@ class LoginPage extends AbstractPage {
             log.info("Timeout login: " + timeoutException.getClass().getSimpleName());
         }
     }
-    public void login(String username,String password) {
+
+    public void login(String username, String password) {
 
         log.info("Introduciendo contraseña...");
         try {

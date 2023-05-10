@@ -28,11 +28,10 @@ public class LogOutTest {
         driver.manage().window().maximize();
         PageFactory.start(driver);
         driver.get(InventarioPages.PAGE_URL);
-        PageFactory pagesFactory= PageFactory.getInstance();
-        logOutPages =pagesFactory.getLogOutPages();
-        loginPage=pagesFactory.getLoginPage();
-        loginPage.login(user,password);
-
+        PageFactory pagesFactory = PageFactory.getInstance();
+        logOutPages = pagesFactory.getLogOutPages();
+        loginPage = pagesFactory.getLoginPage();
+        loginPage.login(user, password);
 
 
     }
@@ -40,7 +39,7 @@ public class LogOutTest {
     @Test
     public void comprobarLogOut() {
 
-        Assert.assertEquals("El login es incorrecto",LoginPage.PAGE_URL,logOutPages.comprobarLogOut());
+        Assert.assertEquals("El login es incorrecto", LoginPage.PAGE_URL, logOutPages.comprobarLogOut());
     }
 
     @After
