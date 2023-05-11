@@ -1,4 +1,4 @@
-package com.hiberus.university.mario.maven.first.Carrito;
+package com.hiberus.university.mario.maven.first.Test;
 
 import com.hiberus.university.mario.maven.first.Pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -10,13 +10,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class CarritoTest {
-
+public class LogOutTest {
+    String url = "https://www.saucedemo.com/";
     WebDriver driver;
 
-    CarritoPages carritoPages;
+    LogOutPages logOutPages;
     LoginPage loginPage;
-
     String user = "standard_user";
     String password = "secret_sauce";
 
@@ -28,9 +27,9 @@ public class CarritoTest {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         PageFactory.start(driver);
-        driver.get(LoginPage.PAGE_URL);
+        driver.get(InventarioPages.PAGE_URL);
         PageFactory pagesFactory = PageFactory.getInstance();
-        carritoPages = pagesFactory.getCarritoPages();
+        logOutPages = pagesFactory.getLogOutPages();
         loginPage = pagesFactory.getLoginPage();
         loginPage.login(user, password);
 
@@ -38,9 +37,9 @@ public class CarritoTest {
     }
 
     @Test
-    public void eliminarProductoCarrito() {
-        carritoPages.aniadir2productos();
-        Assert.assertEquals("El numero de carrito no coincide con el esperado", "1", carritoPages.eliminarProductoCarrito());
+    public void comprobarLogOut() {
+
+        Assert.assertEquals("El login es incorrecto", LoginPage.PAGE_URL, logOutPages.comprobarLogOut());
     }
 
     @After

@@ -1,18 +1,18 @@
 LOGIN
 
 CP.1 LOGIN CORRECTO
--GIVEN: el usuario se encuentra en la pagina de inicio de saucedemo "https://www.saucedemo.com/"
--WHEN: el usuario proporciona el usuario "standar_user"
--AND: el usuario proporciona la contraseña "secret_sauce"
+GIVEN: el usuario se encuentra en la pagina de inicio de saucedemo "https://www.saucedemo.com/"
+WHEN: el usuario proporciona el usuario "standar_user"
+AND: el usuario proporciona la contraseña "secret_sauce"
 AND: clico en el boton de login
--THEN: el usuario se encuentra en la pagina del inventario
+THEN: el usuario se encuentra en la pagina del inventario
 
 CP.1 LOGIN INCORRECTO
--GIVEN: el usuario se encuentra en la pagina de inicio de saucedemo "https://www.saucedemo.com/"
--WHEN: el usuario proporciona el usuario "standar_user"
--AND: el usuario proporciona la contraseña "secretsauce"
+GIVEN: el usuario se encuentra en la pagina de inicio de saucedemo "https://www.saucedemo.com/"
+WHEN: el usuario proporciona el usuario "standar_user"
+AND: el usuario proporciona la contraseña "secretsauce"
 AND: clico en el boton de login
--THEN: el usuario se encuentra el mensaje de error
+THEN: el usuario se encuentra el mensaje de error
 
 INVENTARIO
 

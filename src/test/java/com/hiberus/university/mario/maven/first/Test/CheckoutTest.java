@@ -1,4 +1,4 @@
-package com.hiberus.university.mario.maven.first.LogOut;
+package com.hiberus.university.mario.maven.first.Test;
 
 import com.hiberus.university.mario.maven.first.Pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -10,11 +10,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class LogOutTest {
-    String url = "https://www.saucedemo.com/";
+public class CheckoutTest {
     WebDriver driver;
 
-    LogOutPages logOutPages;
+    CheckOutPages checkOutPages;
     LoginPage loginPage;
     String user = "standard_user";
     String password = "secret_sauce";
@@ -27,19 +26,21 @@ public class LogOutTest {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         PageFactory.start(driver);
-        driver.get(InventarioPages.PAGE_URL);
+        driver.get(CarritoPages.PAGE_URL);
         PageFactory pagesFactory = PageFactory.getInstance();
-        logOutPages = pagesFactory.getLogOutPages();
+        checkOutPages = pagesFactory.getCheckOutPages();
         loginPage = pagesFactory.getLoginPage();
         loginPage.login(user, password);
-
-
     }
 
     @Test
-    public void comprobarLogOut() {
+    public void comprobarPrecioFinal() {
+        checkOutPages.verificarPrecioPedido();
+    }
 
-        Assert.assertEquals("El login es incorrecto", LoginPage.PAGE_URL, logOutPages.comprobarLogOut());
+    @Test
+    public void RealizarPedido() {
+        Assert.assertEquals("No es el mismo mensaje", "Your order has been dispatched, and will arrive just as fast as the pony can get there!", checkOutPages.VerificarMensajePedido());
     }
 
     @After

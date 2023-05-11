@@ -1,4 +1,4 @@
-package com.hiberus.university.mario.maven.first.CheckOut;
+package com.hiberus.university.mario.maven.first.Test;
 
 import com.hiberus.university.mario.maven.first.Pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -10,11 +10,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class CheckoutTest {
+public class CarritoTest {
+
     WebDriver driver;
 
-    CheckOutPages checkOutPages;
+    CarritoPages carritoPages;
     LoginPage loginPage;
+
     String user = "standard_user";
     String password = "secret_sauce";
 
@@ -26,24 +28,17 @@ public class CheckoutTest {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         PageFactory.start(driver);
-        driver.get(CarritoPages.PAGE_URL);
+        driver.get(LoginPage.PAGE_URL);
         PageFactory pagesFactory = PageFactory.getInstance();
-        checkOutPages = pagesFactory.getCheckOutPages();
+        carritoPages = pagesFactory.getCarritoPages();
         loginPage = pagesFactory.getLoginPage();
         loginPage.login(user, password);
-
-
     }
 
     @Test
-    public void comprobarPrecioFinal() {
-        checkOutPages.verificarPrecioPedido();
-    }
-
-    @Test
-    public void RealizarPedido() {
-        Assert.assertEquals("No es el mismo mensaje", "Your order has been dispatched, and will arrive just as fast as the pony can get there!", checkOutPages.VerificarMensajePedido());
-
+    public void eliminarProductoCarrito() {
+        carritoPages.aniadir2productos();
+        Assert.assertEquals("El numero de carrito no coincide con el esperado", "1", carritoPages.eliminarProductoCarrito());
     }
 
     @After

@@ -1,4 +1,4 @@
-package com.hiberus.university.mario.maven.first.Login;
+package com.hiberus.university.mario.maven.first.Test;
 
 import com.hiberus.university.mario.maven.first.Pages.InventarioPages;
 import com.hiberus.university.mario.maven.first.Pages.LoginPage;

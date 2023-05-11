@@ -1,4 +1,4 @@
-package com.hiberus.university.mario.maven.first.Pages;
+package Destinia.Pages;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.NoSuchElementException;
