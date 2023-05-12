@@ -1,9 +1,7 @@
 package com.hiberus.university.mario.maven.first.Pages;
 
 import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -32,5 +30,18 @@ public abstract class AbstractPage {
             elementException.printStackTrace();
         }
         return isLoaded;
+    }
+    public void navigateTo(String url) {
+        try {
+            driver.navigate().to(url);
+        } catch (java.lang.Exception e) {
+            if (e instanceof TimeoutException) {
+                log.info("Timeout loading home page");
+            } else if (e instanceof ScriptTimeoutException) {
+                log.info("Script timeout loading home page");
+            } else {
+                log.error(e.getMessage());
+            }
+        }
     }
 }

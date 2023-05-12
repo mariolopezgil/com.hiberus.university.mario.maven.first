@@ -27,15 +27,10 @@ public class LogOutPages extends AbstractPage {
         return null;
     }
 
-    public String comprobarLogOut() {
-        log.info("LogOut in...");
-        try {
+    public void clickMenu() {
             menu.click();
-            logOut.click();
-
-        } catch (TimeoutException timeoutException) {
-            log.info("Timeout clicking logOut: " + timeoutException.getClass().getSimpleName());
-        }
-        return getDriver().getCurrentUrl();
+    }
+    public void clickLogOut(){
+        logOut.click();
     }
 }

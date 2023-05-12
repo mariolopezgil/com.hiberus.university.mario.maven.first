@@ -12,7 +12,6 @@ public class PageFactory {
     private final WebDriver driver;
 
     private PageFactory(WebDriver driver) {
-        CheckOutPages checkOutPages1;
         this.driver = driver;
         loginPage = new LoginPage(driver);
         inventarioPages = new InventarioPages(driver);
@@ -50,7 +49,6 @@ public class PageFactory {
         return carritoPages;
     }
 
-    public LogOutPages getLogOutPages() {
-        return logOut;
+    public LogOutPages getLogOutPages() {return logOut;
     }
 }

@@ -68,18 +68,10 @@ class LoginPage extends AbstractPage {
     }
 
     public void login(String username, String password) {
-
-        log.info("Introduciendo contraseña...");
-        try {
             usernameInput.click();
             usernameInput.sendKeys(username);
             passwordInput.click();
             passwordInput.sendKeys(password);
-            loginButton.click();
-        } catch (TimeoutException timeoutException) {
-            log.info("Timeout login: " + timeoutException.getClass().getSimpleName());
-        }
-
     }
 
     public boolean hasUsernamePasswordError() {
