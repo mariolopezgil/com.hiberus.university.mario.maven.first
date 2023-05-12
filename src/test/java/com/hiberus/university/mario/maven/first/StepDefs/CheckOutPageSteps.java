@@ -11,7 +11,6 @@ import org.junit.Assert;
 public class CheckOutPageSteps {
     PageFactory pageFactory= PageFactory.getInstance();
     CheckOutPages checkOutPages= pageFactory.getCheckOutPages();
-    LoginPage loginPage = pageFactory.getLoginPage();
     @And("the user accesses the cart \\(clicks the cart button)")
     public void theUserAccessesTheCartClicksTheCartButton() {
       checkOutPages.clickCarrito();
@@ -45,9 +44,5 @@ public class CheckOutPageSteps {
     public void theUserShouldBeAbleToVerifyThatTheSumOfTheItemsTheyHaveAddedIsEqualToTheAmountShownOnTheCheckoutPageUnderItemsPrice() {
         Assert.assertEquals(checkOutPages.verificarPrecioPedido().get(0),checkOutPages.verificarPrecioPedido().get(1));
     }
-    @Given("the user is logged successfully and is into the inventory")
-    public void theUserIsLoggedSuccessfullyAndIsIntoTheInventory() {
-        loginPage.login("standard_user","secret_sauce");
 
-    }
 }

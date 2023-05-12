@@ -13,9 +13,19 @@ public class InventarioPageSteps {
     PageFactory pageFactory= PageFactory.getInstance();
     InventarioPages inventarioPages= pageFactory.getInventarioPages();
     LoginPage loginPage= pageFactory.getLoginPage();
+    @Given("the user is logged successfully and is into the inventory")
+    public void theUserIsLoggedSuccessfullyAndIsIntoTheInventory() {
+        loginPage.login("standard_user","secret_sauce");
+
+    }
     @When("the user counts the number of items")
     public int theUserCountsTheNumberOfItems() {
         return inventarioPages.obtenerNumeroElementos();
+    }
+    @Then("the user should be able to see that the number of cart items is {int}")
+    public void theUserShouldBeAbleToSeeThatTheNumberOfCartItemsIs(int numero) {
+        Assert.assertEquals(numero,theUserCountsTheNumberOfItems());
+
     }
     @When("the user navigates to the inventory page")
     public void theUserNavigatesToTheInventoryPage() {
@@ -38,11 +48,7 @@ public class InventarioPageSteps {
         inventarioPages.aniadir3productos(numero);
 
     }
-    @Then("the user should be able to see that the number of cart items is {int}")
-    public void theUserShouldBeAbleToSeeThatTheNumberOfCartItemsIs(int numero) {
-        Assert.assertEquals(numero,inventarioPages.obtenerNumeroCarrito());
 
-    }
     @When("the user selects the option to sort the list of products by {string}")
     public void theUserSelectsTheOptionToSortTheListOfProductsBy(String sort) {
         inventarioPages.sortMenu(sort);
@@ -59,11 +65,7 @@ public class InventarioPageSteps {
     public void theUserShouldBeCountItems(int numeroItems) {
         Assert.assertEquals(numeroItems,theUserCountsTheNumberOfItems());
     }
-    @Given("the user is logged successfully and is into the inventory")
-    public void theUserIsLoggedSuccessfullyAndIsIntoTheInventory() {
-        loginPage.login("standard_user","secret_sauce");
 
-    }
     @And("the user removes  {string} from the inventory")
     public void theUserRemovesFromTheInventory(String nombre) {
         inventarioPages.clickRemove(nombre);

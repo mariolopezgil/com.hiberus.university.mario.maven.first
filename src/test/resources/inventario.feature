@@ -1,7 +1,7 @@
 @InventorySuite
 Feature: Inventory Test Suite
 
-  Background: Inventory
+  Background: Navigate into Inventory page
     Given the user is logged successfully and is into the inventory
 
   @Validation6Items

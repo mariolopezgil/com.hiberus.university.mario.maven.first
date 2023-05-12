@@ -12,12 +12,7 @@ import org.junit.Assert;
 public class LogOutPageSteps {
     PageFactory pageFactory= PageFactory.getInstance();
     LogOutPages logOutPages= pageFactory.getLogOutPages();
-    LoginPage loginPage = pageFactory.getLoginPage();
-    @Given("the user is logged successfully and is into the inventory")
-    public void theUserIsLoggedSuccessfullyAndIsIntoTheInventory() {
-        loginPage.login("standard_user","secret_sauce");
 
-    }
     @When("the user clicks on the dropdown menu")
     public void theUserClicksOnTheDropdownMenu() {
         logOutPages.clickMenu();

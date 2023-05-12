@@ -12,12 +12,7 @@ import org.junit.Assert;
 public class CarritoPageSteps {
     PageFactory pageFactory= PageFactory.getInstance();
     CarritoPages carritoPages = pageFactory.getCarritoPages();
-    LoginPage loginPage = pageFactory.getLoginPage();
-    @Given("the user is logged successfully and is into the inventory")
-    public void theUserIsLoggedSuccessfullyAndIsIntoTheInventory() {
-        loginPage.login("standard_user","secret_sauce");
 
-    }
     @When("the user adds {int} products to the inventory")
     public void theUserAddsProductsToTheInventory(int numero) {
         carritoPages.aniadir2productos(2);
