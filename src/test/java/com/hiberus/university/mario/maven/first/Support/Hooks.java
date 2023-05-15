@@ -7,8 +7,8 @@ import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 @Slf4j
 public class Hooks {
@@ -16,9 +16,9 @@ public class Hooks {
     @Before
     public void before(Scenario scenario){
         log.info("starting"+scenario.getName());
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);
+        WebDriverManager.firefoxdriver().setup();
+        FirefoxOptions options = new FirefoxOptions();
+        driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         PageFactory.start(driver);

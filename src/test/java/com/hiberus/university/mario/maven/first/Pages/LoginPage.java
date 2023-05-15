@@ -68,10 +68,9 @@ class LoginPage extends AbstractPage {
     }
 
     public void login(String username, String password) {
-            usernameInput.click();
             usernameInput.sendKeys(username);
-            passwordInput.click();
             passwordInput.sendKeys(password);
+            loginButton.click();
     }
 
     public boolean hasUsernamePasswordError() {

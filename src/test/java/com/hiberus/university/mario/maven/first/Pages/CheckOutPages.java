@@ -58,8 +58,8 @@ public class CheckOutPages extends AbstractPage {
                 String formato = itemPrice.get(i).getText().replace("$", "");
                 Double precio = Double.parseDouble(formato);
                 PrecioTotal += precio;
-                precios.add(PrecioTotal);
             }
+            precios.add(PrecioTotal);
             String[] soloPrecio = stringPrecios.getText().split("\\$");
             String numero = soloPrecio[1];
             precioItems = Double.parseDouble(numero);

@@ -1,13 +1,13 @@
-@CartSuite
-Feature:Cart Test Suite
+Feature: Cart Test Suite
 
-  Background:Cart
-    Given the user is logged successfully and is into the inventory
+  Background: User is logged in and has access to inventory
+    Given the user has logged in successfully
+    And the user is in the inventory page
 
   @DeleteProductToTheCart
-  Scenario :Verify that the product is not in the cart
-    When the user adds 2 products to the inventory
-    And the user clicks on the cart
-    And the user removes 1 of these products from the cart
-    Then the user should not be able to see the product in the cart
+  Scenario: Verify that a product can be removed from the cart
+    When the user adds 2 products to the cart
+    And the user clicks on the cart button
+    And the user removes 1 of the products from the cart
+    Then the user should not see the removed product in the cart
 

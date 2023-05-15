@@ -1,31 +1,31 @@
 Feature: CheckOut Test Suite
 
-  Background: CheckOut
-    Given the user is logged successfully and is into the inventory
+  Background: User is logged in and has access to inventory
+    Given the user has logged in successfully
+    And the user is in the inventory page
 
   @VerifyItemsPrices
-  Scenario Outline: Verify the price of products in the checkout are equal to the price of products in the inventory
-    When the user adds 3 products
-    And the user accesses the cart (clicks the cart button)
-    And the user clicks the checkout button
-    And the user fills out the form (inputs "<name>", "<lastname>", "<cod>")
-    And the user clicks the continue button
-    Then the user should be able to verify that the sum of the items they have added is equal to the amount shown on the checkout page under items price
+  Scenario Outline: Verify prices of products in checkout match those in inventory
+    When the user adds 3 products to the cart
+    And the user clicks on the cart button
+    And the user clicks on the checkout button
+    And the user fills out the form with name "<name>", lastname "<lastname>", and COD "<cod>"
+    And the user clicks on the continue button
+    Then the user should verify that the total price of items in the checkout matches the sum of individual prices in the inventory
 
     Examples:
      | name | lastname | cod |
      |  a   |     a     |     1    |
 
-  @ConfirmationMessage
-  Scenario Outline: Order
-    When the user adds 1 products
-    And the user accesses the cart (clicks the cart button)
-    And the user clicks the checkout button
-    And the user fills out the form (inputs "<name>", "<lastname>", "<cod>")
-    And the user clicks the continue button
-    And the user clicks the finish button
-    Then the user should be able to see the confirmation message that the order has been placed
-
+    @ConfirmationMessage
+  Scenario Outline: Place an order and receive confirmation message
+    When the user adds 1 product to the cart
+    And the user clicks on the cart button
+    And the user clicks on the checkout button
+    And the user fills out the form with name "<name>", lastname "<lastname>", and COD "<cod>"
+    And the user clicks on the continue button
+    And the user clicks on the finish button
+    Then the user should see a confirmation message that the order has been placed
     Examples:
      | name | lastname | cod |
      |  a   |     a     |     1    |

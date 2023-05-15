@@ -13,7 +13,6 @@ public abstract class AbstractPage {
 
     AbstractPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10, 500);
     }
 
     public abstract WebElement getPageLoadedTestElement();

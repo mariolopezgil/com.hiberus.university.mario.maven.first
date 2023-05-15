@@ -13,19 +13,9 @@ public class InventarioPageSteps {
     PageFactory pageFactory= PageFactory.getInstance();
     InventarioPages inventarioPages= pageFactory.getInventarioPages();
     LoginPage loginPage= pageFactory.getLoginPage();
-    @Given("the user is logged successfully and is into the inventory")
-    public void theUserIsLoggedSuccessfullyAndIsIntoTheInventory() {
-        loginPage.login("standard_user","secret_sauce");
-
-    }
     @When("the user counts the number of items")
     public int theUserCountsTheNumberOfItems() {
         return inventarioPages.obtenerNumeroElementos();
-    }
-    @Then("the user should be able to see that the number of cart items is {int}")
-    public void theUserShouldBeAbleToSeeThatTheNumberOfCartItemsIs(int numero) {
-        Assert.assertEquals(numero,theUserCountsTheNumberOfItems());
-
     }
     @When("the user navigates to the inventory page")
     public void theUserNavigatesToTheInventoryPage() {
@@ -39,20 +29,22 @@ public class InventarioPageSteps {
     public void theUserAddsToTheCart(String nombre) {
         inventarioPages.clickAniadir(nombre);
     }
+
     @Then("the user should not be able to see the {string} in the cart")
     public void theUserShouldNotBeAbleToSeeTheInTheCart(String nombre) {
-        inventarioPages.addSauceLabsEnabled(nombre);
+        Assert.assertTrue(inventarioPages.addSauceLabsEnabled(nombre));
     }
+
     @When("the user adds {int} products")
     public void theUserAddsProducts(int numero) {
         inventarioPages.aniadir3productos(numero);
-
     }
 
     @When("the user selects the option to sort the list of products by {string}")
     public void theUserSelectsTheOptionToSortTheListOfProductsBy(String sort) {
         inventarioPages.sortMenu(sort);
     }
+
     @Then("the user should be able to see that the list of products is sorted by {string}")
     public void theUserShouldBeAbleToSeeThatTheListOfProductsIsSortedBy(String sort) {
         if(sort.equals("az")){
@@ -65,9 +57,30 @@ public class InventarioPageSteps {
     public void theUserShouldBeCountItems(int numeroItems) {
         Assert.assertEquals(numeroItems,theUserCountsTheNumberOfItems());
     }
+    @Given("the user is logged in successfully and is on the inventory page")
+    public void theUserIsLoggedInSuccessfullyAndIsOnTheInventoryPage() {
+        inventarioPages.navigateTo(LoginPage.PAGE_URL);
+        loginPage.login("standard_user","secret_sauce");
+    }
 
-    @And("the user removes  {string} from the inventory")
-    public void theUserRemovesFromTheInventory(String nombre) {
-        inventarioPages.clickRemove(nombre);
+    @Then("the user should see {int} items in the inventory")
+    public void theUserShouldSeeItemsInTheInventory(int numero) {
+        Assert.assertEquals(numero,theUserCountsTheNumberOfItems());
+
+    }
+
+    @And("the user removes {string} from the inventory")
+    public void theUserRemovesFromTheInventory(String nombre) {inventarioPages.clickRemove(nombre);
+    }
+
+    @When("the user adds {int} products to the cart")
+    public void theUserAddsProductsToTheCart(int numero) {
+        inventarioPages.aniadir3productos(numero);
+    }
+
+    @Then("the user should see that the number of cart items is {int}")
+    public void theUserShouldSeeThatTheNumberOfCartItemsIs(int numero) {
+        Assert.assertEquals( String.valueOf(numero),inventarioPages.obtenerNumeroCarrito());
+
     }
 }
