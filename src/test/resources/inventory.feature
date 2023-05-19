@@ -1,4 +1,4 @@
-@InventorySuite
+@Inventario
 Feature: Inventory Test Suite
 
   Background: Navigate into Inventory page

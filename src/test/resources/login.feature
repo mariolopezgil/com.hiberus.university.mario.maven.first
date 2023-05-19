@@ -1,4 +1,4 @@
-@LoginSuite
+@Login
 Feature: Login Test Suite
 
   Background:Navigate to the home page

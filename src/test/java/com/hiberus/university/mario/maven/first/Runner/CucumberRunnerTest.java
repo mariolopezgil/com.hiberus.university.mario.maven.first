@@ -8,8 +8,13 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-        plugin = {"pretty"},
+        @CucumberOptions(
+                publish = true,
+                plugin = {
+                        "pretty",
+                        "json:target/surefire-reports/cucumber.json",
+                        "html:target/cucumber-html-report.html",
+                },
         glue = {
                 "com/hiberus/university/mario/maven/first/StepDefs",
                 "com/hiberus/university/mario/maven/first/Support"},

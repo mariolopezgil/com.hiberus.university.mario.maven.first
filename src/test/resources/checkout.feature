@@ -1,3 +1,4 @@
+@CheckOut
 Feature: CheckOut Test Suite
 
   Background: User is logged in and has access to inventory

@@ -70,7 +70,7 @@ public class InventarioPageSteps {
     }
 
     @And("the user removes {string} from the inventory")
-    public void theUserRemovesFromTheInventory(String nombre) {inventarioPages.clickRemove(nombre);
+    public void theUserRemovesFromTheInventory(String nombre) throws InterruptedException {inventarioPages.clickRemove(nombre);
     }
 
     @When("the user adds {int} products to the cart")

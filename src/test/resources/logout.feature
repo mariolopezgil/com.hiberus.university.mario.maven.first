@@ -1,4 +1,4 @@
-
+@LogOut
 Feature: LogOut Test Suite
 
   Background: User is logged in and has access to inventory

@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.support.PageFactory;
 
@@ -20,6 +21,8 @@ import org.openqa.selenium.support.PageFactory;
 public class InventarioPages extends AbstractPage {
     NumerosAleatorios numerosAleatorios = new NumerosAleatorios();
     public static final String PAGE_URL = "https://www.saucedemo.com/inventory.html";
+    @FindBy(xpath = "//a[@class='shopping_cart_link']")
+    private WebElement carrito;
     @FindBy(xpath = "//div[@class='inventory_item']")
     private List<WebElement> itemList;
     @FindBy(xpath = "//span[@class='shopping_cart_badge']")
@@ -40,6 +43,8 @@ public class InventarioPages extends AbstractPage {
     private WebElement removeSauceLabs;
     @FindBy(xpath = "//button[@class='btn btn_primary btn_small btn_inventory']")
     private List<WebElement> listaBotonesAniadir;
+    @FindBy (xpath = "//div[@class='cart_item']")
+    private List<WebElement> itemsCarrito;
 
 
     InventarioPages(WebDriver driver) {
@@ -67,13 +72,16 @@ public class InventarioPages extends AbstractPage {
     }
 
     public void clickAniadir(String nombre) {
-        WebElement aniadirProducto = getDriver().findElement(By.xpath("//div[@class='inventory_item_name' and contains(text(), '"+nombre+"')]//button[@class='btn btn_primary btn_small btn_inventory']"));
+        WebElement aniadirProducto = getDriver().findElement(By.xpath("//div[@class='inventory_item']//div[@class='inventory_item_name' and contains(text(), '" + nombre + "')]/ancestor::div[@class='inventory_item']//button[@class='btn btn_primary btn_small btn_inventory']"));
         aniadirProducto.click();
     }
-    public void clickRemove(String nombre) {
-        WebElement aniadirProducto = getDriver().findElement(By.xpath("//div[@class='cart_item' and contains(text(), '"+nombre+"')]//button[@class='btn btn_secondary btn_small cart_button']"));
-        aniadirProducto.click();
+
+    public void clickRemove(String nombre) throws InterruptedException {
+        carrito.click();
+        WebElement removeProducto = getDriver().findElement(By.xpath("//div[@class='cart_item']//div[contains(text(), '" + nombre + "')]/ancestor::div//button[@class='btn btn_secondary btn_small cart_button']"));
+        removeProducto.click();
     }
+
 
     public String obtenerNumeroCarrito() {
 
@@ -96,17 +104,9 @@ public class InventarioPages extends AbstractPage {
         return numeroCarrito.getText();
     }
     public boolean addSauceLabsEnabled(String nombre) {
-        WebElement productoEliminado = getDriver().findElement(By.xpath("//div[@class='inventory_item_name' and contains(text(), '"+nombre+"')]"));
-        boolean bool ;
-        if(productoEliminado.isDisplayed()){
-            bool=false;
-        }else{
-            bool=false;
+            return itemsCarrito.isEmpty();
         }
 
-        return bool;
-
-    }
     public List sortInvenory(String sort){
         ArrayList listas = new ArrayList();
         List<String> nombres = new ArrayList<>();

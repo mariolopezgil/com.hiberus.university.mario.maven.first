@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="96575bae-40bd-4ff7-a781-39b5260c57b3" name="Changes" comment="hell">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Utils/Flags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/InventarioPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/InventarioPages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/LogOutPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/LogOutPages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Runner/CucumberRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Runner/CucumberRunnerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/LogOutPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/LogOutPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Support/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Support/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/carrito.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/cart.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/checkout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/checkout.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/inventario.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/inventory.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/logout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/logout.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/com.hiberus.university.ruben.maven.first-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Actions/EjercicioPrueba.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Actions/EjercicioPrueba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/JUnit/JUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JUnit/JUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/carrito.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/checkout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/checkout.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Model/InventoryItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Model/InventoryItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/AbstractPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/AbstractPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/CarritoPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/CarritoPages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/CheckOutPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/CheckOutPages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/InventarioPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/InventarioPages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LogOutPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LogOutPages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/PageFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/PageFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Runner/CucumberRunnerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Runner/CucumberRunnerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/CarritoPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/CarritoPageSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/CheckOutPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/CheckOutPageSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/LogOutPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/LogOutPageSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/LoginPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/LoginPageSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Support/Hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Support/Hooks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Utils/NumerosAleatorios.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Utils/NumerosAleatorios.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/inventario.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/logout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/logout.feature" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/develop" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Mario López Gil &lt;mlopez@hiberus.com&gt;" />
+      </list>
+    </option>
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="ejercicio6" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="26200471-67d4-4ce9-8d9c-01431584e9d1" />
+        <option name="url" value="https://github.com/mariolopezgil/com.hiberus.university.mario.maven.first.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../Program Files/apache-maven-3.9.1" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="notests" />
+      </list>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2OZ2Lhz05J0gVmexHHVGwUBzeES" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/mlopez/Desktop/ejer1/com.hiberus.university.mario.maven.first",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.36206895",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mlopez\Desktop\ejer1\com.hiberus.university.mario.maven.first\src\test\resources" />
+      <recent name="C:\Users\mlopez\Desktop\ejer1\com.hiberus.university.mario.maven.first\src\test\java\com\hiberus\university\mario\maven\first\Stepdefs" />
+      <recent name="C:\Users\mlopez\Desktop\ejer1\com.hiberus.university.mario.maven.first\src\test\java\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.hiberus.university.mario.maven.first.Stepdefs" />
+      <recent name="com.hiberus.university.mario.maven.first" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CucumberRunnerTest">
+    <configuration name="Scenario: Verify that the product &quot;&lt;product&gt;&quot; exists (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/inventarioThread.feature" />
+      <option name="GLUE" value="com.hiberus.university.mario.maven.first.Support com.hiberus.university.mario.maven.first.StepDefs" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="com.hiberus.university.ruben.maven.first" />
+      <option name="NAME_FILTER" value="^Verify that the product \&quot;.*\&quot; exists$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify that the product \&quot;.*\&quot; exists$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify that the product &quot;&lt;product&gt;&quot; exists" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Verify that the product &quot;&lt;product&gt;&quot; is not in the cart (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/inventarioThread.feature" />
+      <option name="GLUE" value="com.hiberus.university.mario.maven.first.Support com.hiberus.university.mario.maven.first.StepDefs" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="com.hiberus.university.ruben.maven.first" />
+      <option name="NAME_FILTER" value="^Verify that the product \&quot;.*\&quot; is not in the cart$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify that the product \&quot;.*\&quot; is not in the cart$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify that the product &quot;&lt;product&gt;&quot; is not in the cart" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Verify that the product &quot;&lt;product&gt;&quot; is not in the cart" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/inventario.feature" />
+      <option name="GLUE" value="com.hiberus.university.mario.maven.first.Support com.hiberus.university.mario.maven.first.StepDefs" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="com.hiberus.university.ruben.maven.first" />
+      <option name="NAME_FILTER" value="^Verify that the product \&quot;.*\&quot; is not in the cart$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify that the product \&quot;.*\&quot; is not in the cart$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify that the product &quot;&lt;product&gt;&quot; is not in the cart" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Verify that the user can log out" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/logoutThread.feature" />
+      <option name="GLUE" value="com.hiberus.university.mario.maven.first.Support com.hiberus.university.mario.maven.first.StepDefs" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="com.hiberus.university.ruben.maven.first" />
+      <option name="NAME_FILTER" value="^Verify that the user can log out$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify that the user can log out$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify that the user can log out" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CucumberRunnerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.hiberus.university.ruben.maven.first" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hiberus.university.mario.maven.first.Runner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hiberus.university.mario.maven.first.Runner" />
+      <option name="MAIN_CLASS_NAME" value="com.hiberus.university.mario.maven.first.Runner.CucumberRunnerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CucumberRunnerTest" />
+        <item itemvalue="Cucumber Java.Scenario: Verify that the product &quot;&lt;product&gt;&quot; is not in the cart (1)" />
+        <item itemvalue="Cucumber Java.Scenario: Verify that the product &quot;&lt;product&gt;&quot; exists (1)" />
+        <item itemvalue="Cucumber Java.Scenario: Verify that the user can log out" />
+        <item itemvalue="Cucumber Java.Scenario: Verify that the product &quot;&lt;product&gt;&quot; is not in the cart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="96575bae-40bd-4ff7-a781-39b5260c57b3" name="Changes" comment="" />
+      <created>1681753734192</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681753734192</updated>
+    </task>
+    <task id="LOCAL-00001" summary="hell">
+      <created>1681835240332</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681835240332</updated>
+    </task>
+    <task id="LOCAL-00002" summary="hell">
+      <created>1681835668453</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681835668453</updated>
+    </task>
+    <task id="LOCAL-00003" summary="hell">
+      <created>1681835747769</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681835747769</updated>
+    </task>
+    <task id="LOCAL-00004" summary="hell">
+      <created>1681835851082</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681835851082</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="hell" />
+    <option name="LAST_COMMIT_MESSAGE" value="hell" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Actions/EjercicioPrueba.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/CheckOutPages.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -125,23 +125,13 @@
       <version>2.0.5</version>
       <scope>test</scope>
     </dependency>    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.26</version>
-      <scope>provided</scope>
-    </dependency>    <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+    <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+  <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>
       <artifactId>json-simple</artifactId>
       <version>1.1.1</version>
     </dependency>
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>4.13.2</version>
-          <scope>test</scope>
-      </dependency>
   </dependencies>
 
   <profiles>
@@ -178,10 +168,6 @@
           <version>3.8.0</version>
         </plugin>
         <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
@@ -198,21 +184,30 @@
           <artifactId>maven-site-plugin</artifactId>
           <version>3.7.1</version>
         </plugin>
-        <plugin>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>8</source>
-          <target>8</target>
-        </configuration>
-      </plugin>
+    <plugin>
+      <groupId>net.masterthought</groupId>
+      <artifactId>maven-cucumber-reporting</artifactId>
+      <version>5.7.5</version>
+      <executions>
+        <execution>
+          <id>execution</id>
+          <phase>test</phase>
+          <goals>
+            <goal>generate</goal>
+          </goals>
+          <configuration>
+            <projectName>saucedemo test project</projectName>
+            <outputDirectory>${project.build.directory}/surefire-reports</outputDirectory>
+            <jsonFiles>
+              <param>**/*.json</param>
+            </jsonFiles>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
     </plugins>
   </build>
 </project>

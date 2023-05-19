@@ -17,7 +17,7 @@ public class LogOutPageSteps {
     }
 
     @And("the user selects the log out option")
-    public void theUserSelectsTheLogOutOption() {
+    public void theUserSelectsTheLogOutOption() throws InterruptedException {
         logOutPages.clickLogOut();
     }
 
