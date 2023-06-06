@@ -5,13 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'mvn clean test -f pom.xml'
+                bat 'mvn clean test -f pom.xml'
             }
         }
         stage('SonarQube Scan') {
             steps {
                 withSonarQubeEnv('SonarQube Scanner') {
-                    sh 'mvn sonar:sonar'
+                    bat 'mvn sonar:sonar'
                 }
             }
         }
