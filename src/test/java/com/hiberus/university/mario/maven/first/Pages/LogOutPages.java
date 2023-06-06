@@ -30,8 +30,7 @@ public class LogOutPages extends AbstractPage {
     public void clickMenu() {
             menu.click();
     }
-    public void clickLogOut() throws InterruptedException {
-        Thread.sleep(500);
+    public void clickLogOut() {
         logOut.click();
     }
 }

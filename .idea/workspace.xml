@@ -5,45 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96575bae-40bd-4ff7-a781-39b5260c57b3" name="Changes" comment="hell">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Utils/Flags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/InventarioPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/InventarioPages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Actions/EjercicioPrueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/JUnit/JUnit.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/LogOutPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/LogOutPages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Runner/CucumberRunnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Runner/CucumberRunnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/LogOutPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/StepDefs/LogOutPageSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Support/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Support/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/carrito.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/cart.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/checkout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/checkout.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/inventario.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/inventory.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/logout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/logout.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/com.hiberus.university.ruben.maven.first-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Actions/EjercicioPrueba.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Actions/EjercicioPrueba.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/JUnit/JUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/JUnit/JUnit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/carrito.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/checkout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/checkout.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Model/InventoryItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Model/InventoryItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/AbstractPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/AbstractPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/CarritoPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/CarritoPages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/CheckOutPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/CheckOutPages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/InventarioPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/InventarioPages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-html-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hiberus.university.mario.maven.first.Runner.CucumberRunnerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hiberus.university.mario.maven.first.Runner.CucumberRunnerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hiberus.university.mario.maven.first.Runner.CucumberRunnerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hiberus.university.mario.maven.first.Runner.CucumberRunnerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-failures.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-failures.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-features.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-features.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-steps.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-steps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-tags.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_1_1010089323.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_1_1010089323.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_2850009157.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_2850009157.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_2_2963366149.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_2_2963366149.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_3_234126098.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_3_234126098.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_4_3894096175.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_4_3894096175.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1099651529.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1099651529.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1102351760.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1102351760.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1223402513.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1223402513.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_123684914.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_123684914.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2208681855.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2208681855.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2411543345.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2411543345.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2590719952.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2590719952.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2685750525.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2685750525.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2872633393.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2872633393.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2923411266.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2923411266.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4025193124.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4025193124.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4036032901.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4036032901.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4053346056.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4053346056.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4072644469.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4072644469.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4193650594.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4193650594.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_446117297.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_446117297.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Actions/EjercicioPrueba.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/JUnit/JUnit.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LogOutPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LogOutPages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/PageFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/PageFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Runner/CucumberRunnerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Runner/CucumberRunnerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/CarritoPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/CarritoPageSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/CheckOutPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/CheckOutPageSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/InventarioPageSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/LogOutPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/LogOutPageSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/LoginPageSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/StepDefs/LoginPageSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Support/Hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Support/Hooks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Utils/NumerosAleatorios.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Utils/NumerosAleatorios.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/inventario.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/logout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/logout.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,17 +110,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/mlopez/Desktop/ejer1/com.hiberus.university.mario.maven.first",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.36206895",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ejercicio10&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mlopez/Appium&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.36206895&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mlopez\Desktop\ejer1\com.hiberus.university.mario.maven.first\src\test\resources" />
