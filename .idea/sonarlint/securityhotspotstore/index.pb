@@ -11,17 +11,3 @@ Isrc/test/java/com/hiberus/university/mario/maven/first/Support/Hooks.java,d\0\
 Ssrc/test/java/com/hiberus/university/mario/maven/first/StepDefs/LoginPageSteps.java,9\6\96640c2be6186cecb6836e93ff20fb8052a1ebc2
 Ö
 Usrc/test/java/com/hiberus/university/mario/maven/first/Runner/CucumberRunnerTest.java,9\a\9ac3824334d57b7a39b0c41bf0932df1b00d176f
-É
-Ssrc/test/java/com/hiberus/university/mario/maven/first/Utils/NumerosAleatorios.java,7\4\74032e0b51c7f9315e4a8e9107ab37957d1b1d98
-
-Osrc/test/java/com/hiberus/university/mario/maven/first/Pages/CheckOutPages.java,2\d\2d29c673ab6d74ef6a74bcf5daa54122f15a8378
-Å
-Qsrc/test/java/com/hiberus/university/mario/maven/first/Pages/InventarioPages.java,3\0\30c433e387d4c302ec3fc073496e7cc19d71a89b
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-}
-Msrc/test/java/com/hiberus/university/mario/maven/first/Pages/PageFactory.java,b\8\b814271a64829697400e511dd50d36841b9e655b
-{
-Ksrc/test/java/com/hiberus/university/mario/maven/first/Pages/LoginPage.java,c\1\c14d2325b9d825597da0aa1855d4a67dfe9199bc
-}
-Msrc/test/java/com/hiberus/university/mario/maven/first/Pages/LogOutPages.java,5\6\56476950019e9d57ec950f12d84b1aa9e7e6e8bf

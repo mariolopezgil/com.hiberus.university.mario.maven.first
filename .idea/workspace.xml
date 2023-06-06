@@ -5,46 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96575bae-40bd-4ff7-a781-39b5260c57b3" name="Changes" comment="hell">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Actions/EjercicioPrueba.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/JUnit/JUnit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/LogOutPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/Pages/LogOutPages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber-html-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-html-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hiberus.university.mario.maven.first.Runner.CucumberRunnerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.hiberus.university.mario.maven.first.Runner.CucumberRunnerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.hiberus.university.mario.maven.first.Runner.CucumberRunnerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.hiberus.university.mario.maven.first.Runner.CucumberRunnerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-failures.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-failures.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-features.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-features.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-steps.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-steps.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/overview-tags.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_1_1010089323.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_1_1010089323.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_2850009157.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_2850009157.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_2_2963366149.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_2_2963366149.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_3_234126098.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_3_234126098.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_4_3894096175.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-feature_4_3894096175.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1099651529.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1099651529.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1102351760.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1102351760.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1223402513.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_1223402513.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_123684914.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_123684914.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2208681855.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2208681855.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2411543345.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2411543345.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2590719952.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2590719952.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2685750525.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2685750525.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2872633393.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2872633393.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2923411266.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_2923411266.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4025193124.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4025193124.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4036032901.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4036032901.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4053346056.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4053346056.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4072644469.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4072644469.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4193650594.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_4193650594.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_446117297.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber-html-reports/report-tag_446117297.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/cucumber.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Actions/EjercicioPrueba.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/JUnit/JUnit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LogOutPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/hiberus/university/mario/maven/first/Pages/LogOutPages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2d29c673ab6d74ef6a74bcf5daa54122f15a8378" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/30c433e387d4c302ec3fc073496e7cc19d71a89b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/56476950019e9d57ec950f12d84b1aa9e7e6e8bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74032e0b51c7f9315e4a8e9107ab37957d1b1d98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b814271a64829697400e511dd50d36841b9e655b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c14d2325b9d825597da0aa1855d4a67dfe9199bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/d/2d29c673ab6d74ef6a74bcf5daa54122f15a8378" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/0/30c433e387d4c302ec3fc073496e7cc19d71a89b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/6/56476950019e9d57ec950f12d84b1aa9e7e6e8bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/4/74032e0b51c7f9315e4a8e9107ab37957d1b1d98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/8/b814271a64829697400e511dd50d36841b9e655b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/1/c14d2325b9d825597da0aa1855d4a67dfe9199bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
