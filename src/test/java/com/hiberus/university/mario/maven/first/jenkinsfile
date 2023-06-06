@@ -5,12 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'mvn clean test -f pom.xml'
+                sh 'mvn clean test'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                 withSonarQubeEnv('nombre_de_la_instalacion_sonarqube') {
+                                    sh 'mvn sonar:sonar'
             }
         }
         stage('Deploy') {
