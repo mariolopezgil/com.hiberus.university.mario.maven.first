@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96575bae-40bd-4ff7-a781-39b5260c57b3" name="Changes" comment="hell" />
+    <list default="true" id="96575bae-40bd-4ff7-a781-39b5260c57b3" name="Changes" comment="hell">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hiberus/university/mario/maven/first/jenkinsfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
