@@ -5,14 +5,20 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat 'mvn clean test -f pom.xml'
+                sh 'mvn clean test -f pom.xml'
+            }
+        }
+        stage('SonarQube Scan') {
+            steps {
+                withSonarQubeEnv('SonarQube Scanner') {
+                    sh 'mvn sonar:sonar'
+                }
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                 withSonarQubeEnv('SonarQube Scanner') {
-                                    bat 'mvn sonar:sonar'
+                step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
             }
         }
         stage('Deploy') {
